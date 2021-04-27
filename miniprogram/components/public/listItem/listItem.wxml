@@ -1,0 +1,18 @@
+<view class="listitem_out_container" bindtap="onClick">
+  <view class="listitem_inner_container">
+    <view class="listitem_img_container">
+      <image src="{{'http://81.70.89.166:12307/' + item.imgs[0]}}" lazy-load></image>
+    </view>
+    <view class="listitem_title_container">
+      <text>{{item.productName}}</text>
+    </view>
+    <view class="listitem_priceAndButton_container">
+      <view class="listitem_price_container">
+        ￥{{item.currentPric}}
+      </view>
+      <view class="listitem_button_container">
+        加购
+      </view>
+    </view>
+  </view>
+</view>

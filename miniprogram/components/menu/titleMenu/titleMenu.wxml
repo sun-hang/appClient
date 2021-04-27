@@ -1,0 +1,6 @@
+<view class="titleMenu_container">
+  <view class="titleMenu_inner_container">
+    <my-menu-button bindtap="iconClick"></my-menu-button>
+    <view class="titleMenu_title_text">{{title}}</view>
+  </view>
+</view>

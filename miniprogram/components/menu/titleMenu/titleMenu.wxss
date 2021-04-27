@@ -1,0 +1,15 @@
+.titleMenu_container{
+  width: 100%;
+}
+.titleMenu_inner_container{
+  width: 94%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.titleMenu_title_text{
+  width: 90%;
+  text-align: center;
+  line-height: 65rpx;
+  /* font-size: .9rem; */
+}

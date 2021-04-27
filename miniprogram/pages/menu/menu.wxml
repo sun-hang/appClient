@@ -1,0 +1,21 @@
+<!-- 分类列表 -->
+<view class="menu_search_container">
+  <my-search bind:mychange="mychange" bind:search="mysearch" bind:click="myclick"></my-search>
+</view>
+<view class="menu_title_button_container">
+  <my-title-menu title="{{currentTag}}" bind:iconClick="iconClick"></my-title-menu>
+</view>
+
+<view class="menu_content_container">
+  <view class="menu_content_inner_container">
+    <view class="menu_content_left_menu_container">
+      <my-left-menu tags="{{tags}}" bind:click="leftTagClick" tag="{{currentTag}}"></my-left-menu>
+    </view>
+    <view class="menu_content_right_tags_container">
+      <view class="menu_content_inner_right_tags_container">
+        <my-item-tag wx:for="{{tagChild}}" bind:click="tagItemClick" wx:key="{{item}}" tag="{{item}}"></my-item-tag>
+      </view>
+    </view>
+  </view>
+</view>
+<my-global-loading show="{{isLoading}}"></my-global-loading>

@@ -1,0 +1,5 @@
+<view class="local_loading_container">
+  <view class="local_loading_inner_container">
+    <mp-loading type="circle" show="{{show}}"></mp-loading>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+.notdata_container{
+  color: #CFCFCF;
+  text-align: center;
+  margin-bottom: 15rpx;
+  font-size: .9rem;
+}

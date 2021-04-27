@@ -1,0 +1,22 @@
+/* components/menu/leftMenu/leftMenu.wxss */
+.leftMenu_container {
+  width: 100%;
+}
+
+.leftMenu_inner_container {
+  width: 100%;
+}
+
+.leftMenu_item_container {
+  width: 100%;
+  text-align: center;
+  margin: 25rpx 0 10rpx -20rpx;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #717171;
+}
+
+.leftMenu_item_container_active{
+  color: #000;
+  text-decoration: underline;
+}

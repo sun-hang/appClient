@@ -1,0 +1,5 @@
+<view class="global_loading_container" wx:if="{{show}}">
+  <view class="global_loading_inner_container">
+    <mp-loading type="dot-gray" ext-class="demo1" animated="{{true}}" duration="{{900}}" show="{{show}}" class="global_loading"></mp-loading>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+page{
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.product_search_container{
+  margin: 20rpx 0;
+}

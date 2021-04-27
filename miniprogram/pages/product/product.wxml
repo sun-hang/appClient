@@ -1,0 +1,3 @@
+<view class="product_search_container">
+  <my-search  bind:click="myclick" searchValue="{{tag}}"></my-search>
+</view>

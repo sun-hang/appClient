@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "my-about":"../../components/home/about/about",
+    "mp-loading": "weui-miniprogram/loading/loading",
+    "my-list-item":"../../components/public/listItem/listItem",
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "my-notdata":"../../components/public/notData/notData",
+    "my-global-loading":"../../components/public/globalLoading/globalLoading",
+    "my-local-loading":"../../components/public/localLoading/localLoading"
+  }
+}

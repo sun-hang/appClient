@@ -1,0 +1,7 @@
+<view class="leftMenu_container">
+  <view class="leftMenu_inner_container">
+    <view data-item="{{item.title}}" bindtap="onClick" class="{{item.title === currentTag ? 'leftMenu_item_container leftMenu_item_container_active': 'leftMenu_item_container'}}" wx:for="{{tags}}" wx:key="{{item._id}}">
+      {{item.title}}
+    </view>
+  </view>
+</view>

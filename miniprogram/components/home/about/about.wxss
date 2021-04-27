@@ -1,0 +1,68 @@
+/* components/home/about/about.wxss */
+@import '../../../style/global.wxss';
+.about_container_out{
+  width: 100%;
+  position: relative;
+}
+.about_container_inner{
+  width: 94%;
+  margin: 15rpx auto;
+  background-color: #fff;
+  padding: 10rpx 25rpx;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  text-align: center;
+}
+.about_icon_container{
+  text-align: center;
+  position: absolute;
+  top:-50rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.about_icon_container image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.about_title_container{
+  margin-top:70rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid rgb(250, 243, 243);
+  font-size:1.2rem;
+}
+.about_title_weixin{
+  font-size: .6rem;
+  margin: 15rpx auto 20rpx;
+  border: 1px solid #5CAF76;
+  display: inline-block;
+  padding: 5rpx 15rpx;
+  border-radius: 20rpx;
+  color: #5CAF76;
+  background-color: rgb(253, 244, 244);
+}
+.about_adduser_container{
+  display: flex;
+  justify-content: center;
+  padding: 10rpx 0;
+}
+.about_adduser_container button{
+  margin: 0 25rpx;
+  font-size:.8rem;
+  vertical-align: middle;
+}
+.about_adduser_container button text{
+  margin-right: 10rpx;
+}
+.about_adduser_userbutton{
+  border-right: 1px solid rgb(250, 243, 243);
+}
+.about_adduser_userbutton button text{
+  color: #F9AB5B;
+}
+.about_adduser_homebutton button text{
+  color: #4FC359;
+}

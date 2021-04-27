@@ -1,0 +1,7 @@
+<view class="menu_button_container">
+  <view class="menu_button_inner_container">
+    <view class="menu_button_item"></view>
+    <view class="menu_button_item"></view>
+    <view class="menu_button_item"></view>
+  </view>
+</view>

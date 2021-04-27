@@ -1,0 +1,1 @@
+<view class="itemTag_item" bindtap="onClick" style="color:{{color}}">{{tag}}</view>

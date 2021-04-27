@@ -1,0 +1,19 @@
+<view class="about_container_out">
+  <view class="about_container_inner">
+    <view class="about_icon_container">
+      <image lazy-load src="{{iconUrl}}"></image>
+    </view>
+    <view class="about_title_container">
+      <view class="about_title_text">{{title}}</view>
+      <text class="about_title_weixin iconfont icon-tubiao211">微信支付已认证</text>
+    </view>
+    <view class="about_adduser_container">
+        <view class="about_adduser_userbutton">
+          <button bindtap="addUser"><text class="iconfont icon-tianjia"></text>加为好友</button>
+        </view>
+        <view class="about_adduser_homebutton">
+          <button open-type="share"><text class="iconfont icon-weixin"></text>分享主页</button>
+        </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-search": "../../components/public/search/search",
+    "mp-icon": "weui-miniprogram/icon/icon"
+  }
+}

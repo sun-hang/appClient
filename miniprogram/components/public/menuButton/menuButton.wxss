@@ -1,0 +1,19 @@
+.menu_button_container {
+  width: 65rpx;
+  height: 65rpx;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu_button_inner_container{
+  width: 55rpx;
+  height: 39rpx;
+}
+.menu_button_item{
+  width: 60%;
+  margin: 6rpx auto;
+  height: 5rpx;
+  background-color: #000;
+}

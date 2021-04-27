@@ -1,0 +1,25 @@
+<!-- 首页 -->
+<image class="home_bg_image" lazy-load src="http://81.70.89.166:12306/api/download/1.jpg" mode="scaleToFill"></image>
+<view class="home_title">
+  <my-about title="小方的护肤小店"
+    iconUrl="https://wx.qlogo.cn/mmhead/CttmTaYSYkRkiaRUblqky8Wib5EC3HyyOlYzr8ibtv50Dxxibiak8yw2kJg/64"></my-about>
+</view>
+<!-- <mp-loading type="circle"></mp-loading>
+<mp-loading duration="{{900}}" ext-class="demo0" type="dot-gray" show="{{show}}" animated="{{animated}}"></mp-loading>
+<mp-loading type="dot-white" ext-class="demo1"></mp-loading> -->
+<view class="home_link_out_container">
+  <view class="home_link_container">
+    <view class="home_link_title_container">
+      <mp-icon type="field" icon="like" color="red" size="{{20}}"></mp-icon>
+      <text>猜你喜欢</text>
+    </view>
+    <view class="home_link_list_container">
+      <block wx:for="{{productList}}">
+        <my-list-item class="home_link_list_item" wx:key="{{item._id}}" item="{{item}}"></my-list-item>
+      </block>
+    </view>
+  </view>
+</view>
+<my-notdata></my-notdata>
+<my-global-loading show="{{show}}"></my-global-loading>
+<my-local-loading show="{{show}}"></my-local-loading>

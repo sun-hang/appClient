@@ -1,0 +1,9 @@
+.itemTag_item {
+  margin: 15rpx 15rpx;
+  font-size: .9rem;
+  cursor: pointer;
+  padding: 5rpx 8rpx;
+  border: 1px solid;
+  border-radius: 18rpx;
+  color: #717171;
+}

@@ -1,0 +1,3 @@
+<view class="notdata_container">
+    <text>——{{text}}——</text>
+</view>

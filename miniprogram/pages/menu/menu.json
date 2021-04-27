@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "my-search": "../../components/public/search/search",
+    "my-title-menu": "../../components/menu/titleMenu/titleMenu",
+    "my-left-menu": "../../components/menu/leftMenu/leftMenu",
+    "my-global-loading":"../../components/public/globalLoading/globalLoading",
+    "my-item-tag":"../../components/menu/itemTag/itemTag"
+  }
+}
