@@ -1,11 +1,15 @@
 <!-- 分类列表 -->
+<!-- 搜索框部分 -->
 <view class="menu_search_container">
   <my-search bind:mychange="mychange" bind:search="mysearch" bind:click="myclick"></my-search>
 </view>
+
+<!-- 面包屑和标题部分 -->
 <view class="menu_title_button_container">
   <my-title-menu title="{{currentTag}}" bind:iconClick="iconClick"></my-title-menu>
 </view>
 
+<!-- 左侧导航和右侧标签 -->
 <view class="menu_content_container">
   <view class="menu_content_inner_container">
     <view class="menu_content_left_menu_container">

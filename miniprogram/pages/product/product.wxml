@@ -1,3 +1,22 @@
+<!-- 搜索框区域 -->
 <view class="product_search_container">
-  <my-search  bind:click="myclick" searchValue="{{tag}}"></my-search>
+  <my-search  bind:click="myclick" searchValue="{{productName}}"></my-search>
 </view>
+
+<!-- 面包屑和标题部分，如果点击的标签显示，直接搜索不显示 -->
+<view class="product_title_button_container" wx:if="{{tag}}">
+  <my-title-menu title="{{tag}}" bind:iconClick="iconClick"></my-title-menu>
+</view>
+
+<view class="product_content_container">
+  <view class="product_conent_inner_container">
+    <block wx:for="{{productList}}">
+        <my-list-item class="product_list_item" wx:key="{{item._id}}" item="{{item}}"></my-list-item>
+      </block>
+  </view>
+</view>
+
+<my-notdata wx:if="{{total === productList.length}}"></my-notdata>
+<my-global-loading show="{{globalLoading}}"></my-global-loading>
+<my-local-loading show="{{localLoading}}"></my-local-loading>
+<my-scroll wx:if="{{scrollButton}}"></my-scroll>

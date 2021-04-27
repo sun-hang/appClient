@@ -1,5 +1,11 @@
 {
   "usingComponents": {
-    "my-search": "../../components/public/search/search"
+    "my-search": "../../components/public/search/search",
+    "my-title-menu": "../../components/menu/titleMenu/titleMenu",
+    "my-list-item": "../../components/public/listItem/listItem",
+    "my-global-loading": "../../components/public/globalLoading/globalLoading",
+    "my-local-loading": "../../components/public/localLoading/localLoading",
+    "my-notdata": "../../components/public/notData/notData",
+    "my-scroll":"../../components/public/scrollTop/scrollTop"
   }
 }

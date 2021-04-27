@@ -22,7 +22,7 @@ Page({
    */
   historyTagClick(e) {
     wx.navigateTo({
-      url: '/pages/product/product?search=' + e.currentTarget.dataset.item,
+      url: '/pages/product/product?productName=' + e.currentTarget.dataset.item,
     })
   },
   /**

@@ -21,9 +21,16 @@ Component({
     currentTag: ""
   },
   lifetimes: {
-    attached(){
+    attached() {
       this.setData({
-        currentTag:this.data.tag
+        currentTag: this.data.tag
+      })
+    }
+  },
+  observers: {
+    'tag'(tag) {
+      this.setData({
+        currentTag:tag
       })
     }
   },
@@ -33,9 +40,9 @@ Component({
   methods: {
     onClick(e) {
       this.setData({
-        currentTag:e.currentTarget.dataset.item
+        currentTag: e.currentTarget.dataset.item
       })
-      this.triggerEvent('click',this.data.currentTag);
+      this.triggerEvent('click', this.data.currentTag);
     }
   }
 })

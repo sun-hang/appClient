@@ -1,4 +1,5 @@
-// miniprogram/pages/product/product.js
+const api = require('../../myUtils/api');
+
 Page({
 
   /**
@@ -9,7 +10,11 @@ Page({
     localLoading: false,
     page: 1,
     size: 10,
-    tag: ''
+    tag: '',
+    total: 0,
+    productName: "",
+    productList: [],
+    scrollButton: false
   },
 
   /**
@@ -19,9 +24,19 @@ Page({
   myclick(e) {
     wx.navigateBack({
       delta: 1,
-      success(){
+      success() {
         console.log('成功了')
       }
+    })
+  },
+
+  /**
+   * 面包屑按钮点击事件
+   * 点击以后回退一步
+   */
+  iconClick() {
+    wx.navigateBack({
+      delta: 1,
     })
   },
   /**
@@ -29,7 +44,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      tag: options.search
+      tag: options.tag ? options.tag : "",
+      productName: options.productName ? options.productName : ''
     })
   },
 
@@ -37,6 +53,18 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    this.setData({
+      globalLoading: true
+    })
+    api.getProductList(this.data.page, this.data.size, this.data.tag, this.data.productName, (err, res) => {
+      if (res) {
+        this.setData({
+          globalLoading: false,
+          total: res.data.total,
+          productList: res.data.result
+        })
+      }
+    })
 
   },
 
@@ -72,6 +100,24 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    if (this.data.total <= this.data.productList.length) {
+      return;
+    }
+    this.setData({
+      localLoading: true
+    })
+
+    api.getProductList(this.data.page + 1, this.data.size, this.data.tag, this.data.productName, (err, res) => {
+      if (res) {
+        this.setData({
+          localLoading: false,
+          total: res.data.total,
+          productList: [...this.data.productList, ...res.data.result],
+          page: this.data.page + 1
+        })
+      }
+    })
+
 
   },
 
@@ -80,5 +126,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  onPageScroll(e) {
+    if (e.scrollTop > 1200) {
+      this.setData({
+        scrollButton: true
+      })
+    }
+    if (e.scrollTop < 200) {
+      this.setData({
+        scrollButton: false
+      })
+    }
   }
 })

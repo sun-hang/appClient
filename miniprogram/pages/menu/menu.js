@@ -7,7 +7,7 @@ Page({
    */
   data: {
     tags: [],
-    currentTag: '品牌',
+    currentTag: '',
     isLoading: false,
     tagChild: []
   },
@@ -44,7 +44,9 @@ Page({
    * @param {*} e 
    */
   iconClick(e) {
-    console.log('icon被点击了')
+    wx.navigateTo({
+      url: '/pages/product/product?tag=' + this.data.tagChild[0],
+    })
   },
 
   /**
@@ -71,7 +73,7 @@ Page({
    */
   tagItemClick(e) {
     wx.navigateTo({
-      url: '/pages/product/product?search=' + e.detail,
+      url: '/pages/product/product?tag=' + e.detail,
     })
   },
 

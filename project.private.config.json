@@ -33,7 +33,7 @@
         {
           "name": "pages/product/product",
           "pathName": "pages/product/product",
-          "query": "search=迪奥",
+          "query": "tag=迪奥",
           "scene": null
         }
       ]

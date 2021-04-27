@@ -7,7 +7,7 @@
   font-size: .8rem;
   color: #000000;
   margin: 10rpx auto 15rpx;
-  box-shadow: 1px 1px 10px  rgba(0, 0, 0, .4);
+  box-shadow: 1px 1px 10px  rgba(0, 0, 0, .25);
   cursor: pointer;
 }
 .listitem_inner_container{
@@ -42,7 +42,7 @@
   width: 50%;
   text-align: center;
   padding: 8rpx 0;
-  box-shadow: 1px 1px 15px  rgba(0, 0, 0, .5);
+  box-shadow: 1px 1px 15px  rgba(0, 0, 0, .3);
 }
 .listitem_price_container{
   border-top-left-radius: 26rpx;

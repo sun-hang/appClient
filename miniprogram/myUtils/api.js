@@ -20,7 +20,9 @@ module.exports.wxGetTags = (callback) => {
 }
 
 module.exports.getLikeProduct = (callback) => {
-  let page = 1, size = 20, ctime = -1;
+  let page = 1,
+    size = 20,
+    ctime = -1;
 
   let path = `/api/product?page=${page}&size=${size}&ctime=${ctime}`
   wx.request({
@@ -32,6 +34,21 @@ module.exports.getLikeProduct = (callback) => {
     },
     fail(err) {
       console.log('error', err)
+    }
+  })
+}
+
+module.exports.getProductList = (page = 1, size = 10, tag = '', productName = '', callback) => {
+  const path = `/api/product?page=${page}&size=${size}&tag=${tag}&productName=${productName}`;
+  wx.request({
+    url: url + path,
+    method: "GET",
+    dataType: "json",
+    success(res) {
+      callback(null, res)
+    },
+    fail(res) {
+      callback(res + "错误", null)
     }
   })
 }
