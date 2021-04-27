@@ -1,1 +1,16 @@
-/* miniprogram/pages/details/details.wxss */
+page{
+  background-color: #fff;
+}
+.details_container{
+  width: 100%;
+}
+.details_title_container{
+  width: 100%;
+  margin: 20rpx 0 40rpx;
+}
+.details_title_text{
+  text-align: center;
+}
+.details_describe_container{
+  margin-bottom: 200rpx;
+}

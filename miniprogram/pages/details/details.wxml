@@ -1,2 +1,20 @@
-<!--miniprogram/pages/details/details.wxml-->
-<text>miniprogram/pages/details/details.wxml</text>
+<my-empty wx:if="{{!item}}"></my-empty>
+<view class="details_container" wx:if="{{item}}">
+  <view class="details_title_container">
+    <view class="details_title_text">
+      {{item.productName}}
+    </view>
+  </view>
+  <view class="details_adBlock_container">
+    <my-ad-block imgs="{{item.imgs}}"></my-ad-block>
+  </view>
+  <view class="details_optionBlock_container">
+    <my-option-block options="{{item.options}}"></my-option-block>
+  </view>
+  <view class="details_describe_container">
+    <my-describe detail="{{item.detail}}"></my-describe>
+  </view>
+  <view class="details_bottomBtn_container">
+    <my-bottom-btn></my-bottom-btn>
+  </view>
+</view>

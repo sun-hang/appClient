@@ -1,0 +1,6 @@
+<view class="empty_container">
+  <view class="empty_inner_container">
+    <text class="iconfont icon-kong"></text>
+    <view class="empty_text">{{text}}</view>
+  </view>
+</view>

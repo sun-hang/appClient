@@ -1,0 +1,22 @@
+<view class="bottomBtn_container">
+  <view class="bottomBtn_inner_container">
+    <view class="bottomBtn_price_container">
+      <view class="bottomBtn_price_left">999  +  大</view>
+      <view class="bottomBtn_price_right">￥120</view>
+    </view>
+    <view class="bottomBtn_btn_container">
+      <view class="bottomBtn_left_btn">
+        <view class="bottomBtn_left_phone" bindtap="phoneClick">
+          <mp-icon icon="mobile-contacts" color="#7e7e7e" size="{{18}}"></mp-icon>
+          <view>客服</view>
+        </view>
+        <view class="bottomBtn_left_shop" bindtap="shopClick">
+          <mp-icon icon="shop" color="#7e7e7e" size="{{18}}"></mp-icon>
+          <view>购物袋</view>
+        </view>
+      </view>
+      <view class="bottomBtn_center_btn" bindtap="currentShopClick">加入购物袋</view>
+      <view class="bottomBtn_right_btn" bindtap="purchaseClick">立即购买</view>
+    </view>
+  </view>
+</view>

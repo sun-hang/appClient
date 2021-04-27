@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    historyTags: []
+    historyTags: [],
+    search: ""
   },
 
   /**
@@ -64,15 +65,15 @@ Page({
     wx.showModal({
       title: '提示',
       content: '确认删除全部历史记录？',
-      success (res) {
+      success(res) {
         if (res.confirm) {
           try {
             wx.removeStorageSync('tags');
             that.setData({
-              historyTags:[]
+              historyTags: []
             })
           } catch (error) {
-      
+
           }
         } else if (res.cancel) {
           console.log('用户点击取消')
@@ -84,7 +85,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (options.search) {
+      this.setData({
+        search: options.search
+      })
+    }
   },
 
   /**

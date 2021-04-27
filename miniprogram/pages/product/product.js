@@ -22,11 +22,17 @@ Page({
    * @param {*} e 
    */
   myclick(e) {
-    wx.navigateBack({
-      delta: 1,
-      success() {
-      }
-    })
+    if (this.data.productName) {
+      wx.navigateBack({
+        delta: 1,
+        success() {
+        }
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/searchPage/searchPage?search=' + this.data.productName,
+      })
+    }
   },
 
   /**
@@ -64,7 +70,6 @@ Page({
         })
       }
     })
-
   },
 
   /**
@@ -126,6 +131,10 @@ Page({
   onShareAppMessage: function () {
 
   },
+  /**
+   * 滚动条滚动事件
+   * @param {*} e 
+   */
   onPageScroll(e) {
     if (e.scrollTop > 1200) {
       this.setData({

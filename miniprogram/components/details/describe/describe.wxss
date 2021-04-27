@@ -1,0 +1,18 @@
+.describe_container{
+  width: 100%;
+}
+.describe_inner_container{
+  width: 94%;
+  margin: 0rpx auto;
+  padding: 0rpx 15rpx 10rpx;
+  box-sizing: border-box;
+}
+.describe_title_container{
+  font-size: 14px;
+  padding: 0rpx 0 15rpx; 
+  margin-bottom: 15rpx;
+  border-bottom: 1px solid #eee;
+}
+.describe_text_container{
+  font-size: .8rem;
+}

@@ -1,0 +1,12 @@
+<view class="optionBlock_container">
+  <view class="optionBlock_inner_container">
+    <view class="optionBlock_item_container" wx:for="{{options}}" wx:key="{{item.name}}">
+      <view class="optionBlock_item_title">{{item.name}}</view>
+      <view class="optionBlock_item_child_container">
+        <view class="optionBlock_item_child" wx:for="{{item.child}}" wx:for-item="tag" wx:key="{{tag}}">
+          {{tag}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

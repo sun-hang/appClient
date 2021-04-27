@@ -6,6 +6,7 @@
     "mp-icon": "weui-miniprogram/icon/icon",
     "my-notdata":"../../components/public/notData/notData",
     "my-global-loading":"../../components/public/globalLoading/globalLoading",
-    "my-local-loading":"../../components/public/localLoading/localLoading"
+    "my-local-loading":"../../components/public/localLoading/localLoading",
+    "my-scroll":"../../components/public/scrollTop/scrollTop"
   }
 }

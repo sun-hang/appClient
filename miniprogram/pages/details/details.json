@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "my-empty": "../../components/public/empty/empty",
+    "my-ad-block": "../../components/details/adBlock/adBlock",
+    "my-bottom-btn": "../../components/details/bottomBtn/bottomBtn",
+    "my-describe": "../../components/details/describe/describe",
+    "my-option-block": "../../components/details/optionBlock/optionBlock"
+  }
 }

@@ -52,3 +52,18 @@ module.exports.getProductList = (page = 1, size = 10, tag = '', productName = ''
     }
   })
 }
+
+module.exports.getProductOne = (id = '', callback) => {
+  let path = `/api/product/${id}`
+  wx.request({
+    url: url + path,
+    method: "GET",
+    dataType: "json",
+    success(res) {
+      callback(null, res)
+    },
+    fail(res) {
+      callback(res + "错误", null)
+    }
+  })
+}

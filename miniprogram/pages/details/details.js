@@ -1,18 +1,32 @@
-// miniprogram/pages/details/details.js
+const api = require('../../myUtils/api');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    _id: "",
+    item: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    this.setData({
+      _id: options.id
+    })
+    api.getProductOne(options.id, (err, res) => {
+      if (res) {
+        this.setData({
+          item: res.data.result
+        })
+      } else {
+        this.setData({
+          item: null
+        })
+      }
+    })
   },
 
   /**

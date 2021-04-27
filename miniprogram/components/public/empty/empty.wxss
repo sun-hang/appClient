@@ -1,0 +1,20 @@
+@import '../../../style/global.wxss';
+.empty_inner_container{
+  background: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  color: #7e7e7e;
+}
+.empty_container{
+  margin-top: -50%;
+}
+.empty_text{
+  margin-top: 30rpx;
+}
+.iconfont{
+  font-size: 80rpx;
+}

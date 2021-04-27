@@ -12,7 +12,8 @@ Page({
   // },
   data: {
     show: false,
-    productList: []
+    productList: [],
+    scrollButton: false
   },
   // onShow() {
   //   this.timer = setInterval(() => {
@@ -86,5 +87,21 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+   * 滚动条滚动事件
+   * @param {*} e 
+   */
+  onPageScroll(e) {
+    if (e.scrollTop > 700) {
+      this.setData({
+        scrollButton: true
+      })
+    }
+    if (e.scrollTop < 200) {
+      this.setData({
+        scrollButton: false
+      })
+    }
   }
 })

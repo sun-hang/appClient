@@ -35,6 +35,18 @@
           "pathName": "pages/product/product",
           "query": "tag=迪奥",
           "scene": null
+        },
+        {
+          "name": "pages/details/details",
+          "pathName": "pages/details/details",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/details/details",
+          "pathName": "pages/details/details",
+          "query": "id=6087e3f7391d1359ac4715c2",
+          "scene": null
         }
       ]
     }

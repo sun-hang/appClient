@@ -1,0 +1,40 @@
+.optionBlock_container {
+  width: 100%;
+}
+
+.optionBlock_inner_container {
+  width: 94%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 10rpx 15rpx;
+}
+
+.optionBlock_item_container {
+  margin-bottom: 15rpx;
+}
+
+.optionBlock_item_title {
+  font-size: .9rem;
+}
+
+.optionBlock_item_child_container {
+  display: flex;
+  padding-bottom: 15rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.optionBlock_item_child {
+  width: 80rpx;
+  height: 80rpx;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .7rem;
+  margin: 10rpx 15rpx 10rpx 0;
+  cursor: pointer;
+}
+.optionBlock_item_child_active{
+  border: 1px solid #000;
+}

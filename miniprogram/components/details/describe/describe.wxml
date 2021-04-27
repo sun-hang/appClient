@@ -1,0 +1,6 @@
+<view class="describe_container">
+  <view class="describe_inner_container">
+    <view class="describe_title_container">商品描述</view>
+    <view class="describe_text_container">{{detail}}</view>
+  </view>
+</view>

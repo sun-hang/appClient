@@ -1,5 +1,5 @@
 <view class="searchPage_search_container">
-  <my-search bind:mychange="mychange" focus="{{true}}" bind:search="mysearch"></my-search>
+  <my-search bind:mychange="mychange" focus="{{true}}" bind:search="mysearch" searchValue="{{search}}"></my-search>
 </view>
 
 <view class="searchPage_history_container" wx:if="{{historyTags.length > 0}}">
@@ -9,7 +9,8 @@
       <mp-icon icon="delete" bindtap="removeHistoryTag" color="#787878" size="{{20}}"></mp-icon>
     </view>
     <view class="searchPage_history_tags_container">
-      <view class="searchPage_history_tags_item" wx:for="{{historyTags}}" data-item="{{item}}" bindtap="historyTagClick" wx:key="{{item}}">{{item}}</view>
+      <view class="searchPage_history_tags_item" wx:for="{{historyTags}}" data-item="{{item}}" bindtap="historyTagClick"
+        wx:key="{{item}}">{{item}}</view>
     </view>
   </view>
 </view>

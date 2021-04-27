@@ -1,0 +1,14 @@
+.adBlock_container{
+  width: 100%;
+}
+.adBlock_container swiper{
+  width: 100%;
+  height: 650rpx;
+}
+
+.adBlock_img_item{
+  width: 94%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
