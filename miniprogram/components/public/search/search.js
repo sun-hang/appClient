@@ -34,7 +34,11 @@ Component({
       this.setData({
         value: this.data.searchValue
       });
+      // setTimeout(()=>{
+      //   console.log(this.data.searchValue)
+      // },2000)
     }
+    
   },
   observers:{
     'searchValue':function(searchValue){
@@ -55,6 +59,7 @@ Component({
       })
     },
     onSearch(e) {
+      console.log(this.data.value)
       this.triggerEvent("search", this.data.value)
     },
     onClick(e) {

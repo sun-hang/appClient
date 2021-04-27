@@ -35,7 +35,7 @@ Page({
      * 2.缓存历史搜索
      */
     wx.navigateTo({
-      url: '/pages/product/product?search=' + e.detail,
+      url: '/pages/product/product?productName=' + e.detail,
     })
     try {
       let value = wx.getStorageSync('tags');

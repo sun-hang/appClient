@@ -12,7 +12,7 @@ Page({
     size: 10,
     tag: '',
     total: 0,
-    productName: "",
+    productName: '',
     productList: [],
     scrollButton: false
   },
@@ -25,7 +25,6 @@ Page({
     wx.navigateBack({
       delta: 1,
       success() {
-        console.log('成功了')
       }
     })
   },
