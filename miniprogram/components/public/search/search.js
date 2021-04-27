@@ -31,7 +31,6 @@ Component({
 
   lifetimes: {
     attached() {
-      console.log(this.data.searchValue)
       this.setData({
         value: this.data.searchValue
       });

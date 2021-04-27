@@ -93,12 +93,21 @@ Page({
       isLoading: true
     })
     api.wxGetTags((res) => {
-      this.setData({
-        tags: res.data,
-        currentTag: res.data[0].title,
-        isLoading: false,
-        tagChild: res.data[0].child
-      })
+      if(res.data.length < 1){
+        this.setData({
+          tags: res.data,
+          currentTag:"",
+          isLoading: false,
+          tagChild: ""
+        })
+      }else{
+        this.setData({
+          tags: res.data,
+          currentTag: res.data[0].title,
+          isLoading: false,
+          tagChild: res.data[0].child
+        })
+      }
     });
   },
 
