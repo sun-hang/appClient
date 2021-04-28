@@ -1,8 +1,8 @@
 <view class="bottomBtn_container">
   <view class="bottomBtn_inner_container">
     <view class="bottomBtn_price_container">
-      <view class="bottomBtn_price_left">999  +  大</view>
-      <view class="bottomBtn_price_right">￥120</view>
+      <view class="bottomBtn_price_left">{{key}}</view>
+      <view class="bottomBtn_price_right">￥{{value}}</view>
     </view>
     <view class="bottomBtn_btn_container">
       <view class="bottomBtn_left_btn">

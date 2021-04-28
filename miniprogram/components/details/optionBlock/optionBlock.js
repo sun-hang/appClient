@@ -23,10 +23,13 @@ Component({
   },
   observers: {
     "options"(options) {
+      let str = [];
       let newArr = options.map(item => {
         item.tag = item.child[0];
+        str.push(item.tag);
         return item
       })
+      this.triggerEvent('change',str.join('-'))
       this.setData({
         newOptions: newArr
       })

@@ -7,15 +7,32 @@ Page({
   data: {
     _id: "",
     item: {},
-    show: false
+    show: false,
+    optionKey: "", //规格信息的key 例："999-大"
+    optionVal: 0
   },
-  addshop() {
+  /**
+   * 添加购物车
+   * @param {*} e 
+   */
+  addshop(e) {
     this.setData({
       show: true
     })
     try {
       let value = wx.getStorageSync('shop');
-      value = value ? [...JSON.parse(value), this.data.item] : [this.data.item];
+      let item = this.data.item;
+      if (!item) {
+        return
+      }
+      item.type = {
+        name: this.data.optionKey,
+        price: this.data.optionVal,
+        count: 1,
+        checked: true,
+      }
+      item.type.total = item.type.price * item.type.count;
+      value = value ? [...JSON.parse(value), item] : [item];
       wx.setStorageSync('shop', JSON.stringify(value))
       this.setData({
         show: false
@@ -27,6 +44,24 @@ Page({
     } catch (error) {
       console.log(error)
     }
+  },
+  /**
+   * 规格信息变化事件
+   * @param {*} e 
+   */
+  optionChange(e) {
+    let arr = this.data.item.optionsDetail;
+    let value = this.data.item.currentPric;
+    for (let i = 0; i < arr.length; i++) {
+      const element = arr[i];
+      if (element.type === e.detail) {
+        value = element.price
+      }
+    }
+    this.setData({
+      optionKey: e.detail,
+      optionVal: value
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -100,4 +135,3 @@ Page({
 
   }
 })
-

@@ -4,7 +4,13 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    key: {
+      type: String,
+      value: ""
+    },
+    value: {
+      type: Number
+    }
   },
 
   /**
@@ -13,7 +19,6 @@ Component({
   data: {
 
   },
-
   /**
    * 组件的方法列表
    */
@@ -32,7 +37,7 @@ Component({
       /**
        * 将事件反馈到父组件
        */
-      this.triggerEvent('addshop',e);
+      this.triggerEvent('addshop', e);
     },
     purchaseClick() {
       wx.switchTab({

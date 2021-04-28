@@ -9,13 +9,13 @@
     <my-ad-block imgs="{{item.imgs}}"></my-ad-block>
   </view>
   <view class="details_optionBlock_container">
-    <my-option-block options="{{item.options}}"></my-option-block>
+    <my-option-block options="{{item.options}}" bind:change="optionChange"></my-option-block>
   </view>
   <view class="details_describe_container">
     <my-describe detail="{{item.detail}}"></my-describe>
   </view>
   <view class="details_bottomBtn_container">
-    <my-bottom-btn bind:addshop="addshop"></my-bottom-btn>
+    <my-bottom-btn bind:addshop="addshop" key="{{optionKey}}" value="{{optionVal}}"></my-bottom-btn>
   </view>
 </view>
 <my-global-loading show="{{show}}"></my-global-loading>
