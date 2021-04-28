@@ -1,2 +1,15 @@
-<!-- 购物车 -->
-<text>购物车</text>
+<my-empty wx:if="{{shopList.length == 0}}"></my-empty>
+<view class="shopCart_container" wx:if="{{shopList.length > 0}}">
+  <view class="shopCart_inner_container">
+    <view class="shopCart_title_container">
+      <my-checkbox checked="{{allChecked}}" text="全部" bind:change="allChange"></my-checkbox>
+    </view>
+    <view class="shopCart_shop_list_container">
+      <my-shop-item bind:increase="increaseBtnHandle" bind:decrease="decreaseBtnHandle" wx:for="{{shopList}}" wx:key="{{item._id}}" item="{{item}}" bind:close="deleteOne" bind:change="checkboxChange"></my-shop-item>
+    </view>
+    <view class="shopCart_bottomBlock">
+      <my-bottom-block totalPrice="{{totalPrice}}" bind:confirm="confirmBtnHandle"></my-bottom-block>
+    </view>
+  </view>
+</view>
+<my-global-loading show="{{globalShow}}"></my-global-loading>

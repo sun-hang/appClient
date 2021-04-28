@@ -1,0 +1,11 @@
+<view class="counter_container">
+  <view class="counter_inner_container">
+    <view class="counter_content_container">
+      <text bindtap="decreaseBtnHandle" class="iconfont icon-jian"></text> {{count}} <text class="iconfont icon-jia"
+        bindtap="increaseBtnHandle"></text>
+    </view>
+    <view class="counter_price_container">
+      ￥{{price}}
+    </view>
+  </view>
+</view>

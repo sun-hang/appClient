@@ -5,7 +5,8 @@ Component({
    */
   properties: {
     totalPrice: {
-      type: Number
+      type: Number,
+      value: 0
     }
   },
 
@@ -25,14 +26,19 @@ Component({
      * @param {*} e 
      */
     continueBtnHandle(e) {
-
+      wx.showTabBar({
+        animation: true,
+      })
+      wx.switchTab({
+        url: '/pages/home/home',
+      })
     },
     /**
      * 确认订单按钮点击事件
      * @param {*} e 
      */
     confirmBtnHandle(e) {
-
+      this.triggerEvent('confirm')
     }
   }
 })

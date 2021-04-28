@@ -1,2 +1,18 @@
-<!--components/shopCart/bottomBlock/bottomBlock.wxml-->
-<text>components/shopCart/bottomBlock/bottomBlock.wxml</text>
+<view class="bottomBlock_container">
+  <view class="bottomBlock_inner_container">
+    <view class="bottomBlock_sum_container">
+      <view class="bottomBlock_subtotal">
+        <text>小计</text>
+        <text>￥{{totalPrice}}</text>
+      </view>
+      <view class="bottomBlock_total">
+        <text>总计</text>
+        <text>￥{{totalPrice}}</text>
+      </view>
+    </view>
+    <view class="bottomBlock_button_container">
+      <view class="bottomBlock_continue" bindtap="continueBtnHandle">继续购物</view>
+      <view class="bottomBlock_confirm" bindtap="confirmBtnHandle">确认订单</view>
+    </view>
+  </view>
+</view>

@@ -47,6 +47,12 @@
           "pathName": "pages/details/details",
           "query": "id=6087e3f7391d1359ac4715c2",
           "scene": null
+        },
+        {
+          "name": "pages/shopCart/shopCart",
+          "pathName": "pages/shopCart/shopCart",
+          "query": "",
+          "scene": null
         }
       ]
     }

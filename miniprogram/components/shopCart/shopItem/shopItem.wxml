@@ -1,2 +1,29 @@
-<!--components/shopCart/shopItem/shopItem.wxml-->
-<text>components/shopCart/shopItem/shopItem.wxml</text>
+<view class="shopItem_container">
+  <view class="shopItem_inner_container">
+    <view class="shopItem_checkbox_container">
+      <my-checkbox checked="{{item.type.checked}}" bind:change="boxChange"></my-checkbox>
+    </view>
+    <view class="shopItem_img_container">
+      <image src="{{'http://127.0.0.1:12307/' + item.imgs[0]}}"></image>
+    </view>
+    <view class="shopItem_content_container">
+      <view class="shopItem_content_title_container">
+        <view class="shopItem_content_title">
+          {{item.productName + "  " + item.type.name}}
+        </view>
+        <view class="shopItem_close_container" bindtap="closeHandle">
+          <mp-icon icon="close2" color="black" size="{{20}}"></mp-icon>
+        </view>
+      </view>
+      <view class="shopItem_content_detail_container">
+        {{item.detail}}
+      </view>
+      <view class="shopItem_operation_container">
+        <my-counter bind:increase="increaseBtnHandle" bind:decrease="decreaseBtnHandle" count="{{item.type.count}}"
+          price="{{item.type.price}}">
+        </my-counter>
+      </view>
+    </view>
+
+  </view>
+</view>

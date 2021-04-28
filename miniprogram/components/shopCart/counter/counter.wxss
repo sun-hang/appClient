@@ -1,0 +1,17 @@
+@import '../../../style/global.wxss';
+.counter_container{
+  width: 100%;
+}
+.counter_inner_container{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 30rpx;
+  color: #565656;
+  align-items: center;
+}
+.counter_content_container .iconfont{
+  font-size: 1.3rem;
+  margin: 0 10rpx;
+  vertical-align: middle;
+}

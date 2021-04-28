@@ -1,4 +1,8 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "my-checkbox": "../../public/checkbox/checkbox",
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "my-counter": "../../../components/shopCart/counter/counter"
+  }
 }

@@ -1,0 +1,21 @@
+.checkbox_container checkbox {
+  display: none;
+}
+.checkbox_container{
+  font-size: .95rem;
+}
+.checkbox_box {
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  border: 1px solid #ccc;
+  border-radius: 8rpx;
+  vertical-align: middle;
+  position: relative;
+}
+.checkbox_box mp-icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-55%);
+}

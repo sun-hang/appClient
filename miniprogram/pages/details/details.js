@@ -22,17 +22,35 @@ Page({
     try {
       let value = wx.getStorageSync('shop');
       let item = this.data.item;
+
       if (!item) {
         return
       }
-      item.type = {
-        name: this.data.optionKey,
-        price: this.data.optionVal,
-        count: 1,
-        checked: true,
+
+      value = value ? JSON.parse(value) : [];
+
+      /**
+       * 查看缓存数组是否有一样的，对比_id和规格信息：例:'999-大' === '999-小'
+       */
+      let filter = value.filter(it => {
+        return it._id === item._id && it.type.name === this.data.optionKey
+      })
+
+      if (filter.length > 0) {
+        filter[0].type.count++;
+        filter[0].type.total = filter[0].type.count * filter[0].type.price;
+      } else {
+        item.type = {
+          name: this.data.optionKey,
+          price: this.data.optionVal,
+          count: 1,
+          checked: true,
+        }
+        item.type.total = item.type.price * item.type.count;
+        filter.push(item);
       }
-      item.type.total = item.type.price * item.type.count;
-      value = value ? [...JSON.parse(value), item] : [item];
+
+      value = [...new Set([...value, ...filter])]
       wx.setStorageSync('shop', JSON.stringify(value))
       this.setData({
         show: false

@@ -1,1 +1,59 @@
-/* components/shopCart/bottomBlock/bottomBlock.wxss */
+.bottomBlock_container {
+  width: 100%;
+  height: 200rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-top: 1px solid #eee;
+}
+
+.bottomBlock_inner_container {
+  width: 94%;
+  height: 100%;
+  margin: 0 auto;
+  /* border: 1px solid #000; */
+  box-sizing: border-box;
+}
+
+.bottomBlock_sum_container {
+  width: 100%;
+  height: 80rpx;
+}
+
+.bottomBlock_subtotal,
+.bottomBlock_total {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: .9rem;
+  color: #545454;
+}
+
+.bottomBlock_button_container {
+  width: 94%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120rpx;
+}
+
+.bottomBlock_button_container>view {
+  height: 60%;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 6%;
+  border: 1px solid #ddd;
+  border-radius: 40rpx;
+  font-size: .9rem;
+  cursor: pointer;
+}
+
+.bottomBlock_confirm {
+  background-color: #000;
+  color: #fff;
+}

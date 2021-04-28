@@ -1,0 +1,11 @@
+<view class="checkbox_container">
+  <checkbox-group bindchange="onchange">
+    <label>
+      <checkbox checked="{{checked}}" value="{{text}}" />
+      <view class="checkbox_box">
+        <mp-icon wx:if="{{checked}}" icon="done" color="black" size="{{15}}"></mp-icon>
+      </view>
+      {{text}}
+    </label>
+  </checkbox-group>
+</view>
