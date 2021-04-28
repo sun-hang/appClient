@@ -1,9 +1,12 @@
 <view class="optionBlock_container">
   <view class="optionBlock_inner_container">
-    <view class="optionBlock_item_container" wx:for="{{options}}" wx:key="{{item.name}}">
+    <view class="optionBlock_item_container" wx:for="{{newOptions}}" wx:key="{{item.name}}">
       <view class="optionBlock_item_title">{{item.name}}</view>
       <view class="optionBlock_item_child_container">
-        <view class="optionBlock_item_child" wx:for="{{item.child}}" wx:for-item="tag" wx:key="{{tag}}">
+        <view class="{{item.tag === tag ? 'optionBlock_item_child_active optionBlock_item_child' : 'optionBlock_item_child'}}"
+          wx:for="{{item.child}}" data-name="{{item.name}}" data-index="{{i}}" wx:for-item="tag" wx:for-index="i"
+          bindtap="onClick"
+          wx:key="{{tag}}">
           {{tag}}
         </view>
       </view>
