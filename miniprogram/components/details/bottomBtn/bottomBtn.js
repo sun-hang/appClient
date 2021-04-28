@@ -27,6 +27,17 @@ Component({
       wx.switchTab({
         url: '/pages/shopCart/shopCart',
       })
+    },
+    currentShopClick(e) {
+      /**
+       * 将事件反馈到父组件
+       */
+      this.triggerEvent('addshop',e);
+    },
+    purchaseClick() {
+      wx.switchTab({
+        url: '/pages/shopCart/shopCart'
+      })
     }
   }
 })
