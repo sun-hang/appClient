@@ -6,24 +6,46 @@ Page({
    */
   data: {
     _id: "",
-    item: {}
+    item: {},
+    show: false
   },
-
+  addshop() {
+    this.setData({
+      show: true
+    })
+    try {
+      let value = wx.getStorageSync('shop');
+      value = value ? [...JSON.parse(value), this.data.item] : [this.data.item];
+      wx.setStorageSync('shop', JSON.stringify(value))
+      this.setData({
+        show: false
+      })
+      wx.showToast({
+        title: '已加入购物车',
+        icon: 'success'
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.setData({
-      _id: options.id
+      _id: options.id,
+      show: true
     })
     api.getProductOne(options.id, (err, res) => {
       if (res) {
         this.setData({
-          item: res.data.result
+          item: res.data.result,
+          show: false
         })
       } else {
         this.setData({
-          item: null
+          item: null,
+          show: false
         })
       }
     })

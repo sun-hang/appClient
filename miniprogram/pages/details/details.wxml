@@ -15,6 +15,7 @@
     <my-describe detail="{{item.detail}}"></my-describe>
   </view>
   <view class="details_bottomBtn_container">
-    <my-bottom-btn></my-bottom-btn>
+    <my-bottom-btn bind:addshop="addshop"></my-bottom-btn>
   </view>
 </view>
+<my-global-loading show="{{show}}"></my-global-loading>

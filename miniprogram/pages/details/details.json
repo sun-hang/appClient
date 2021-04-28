@@ -4,6 +4,7 @@
     "my-ad-block": "../../components/details/adBlock/adBlock",
     "my-bottom-btn": "../../components/details/bottomBtn/bottomBtn",
     "my-describe": "../../components/details/describe/describe",
+    "my-global-loading":"../../components/public/globalLoading/globalLoading",
     "my-option-block": "../../components/details/optionBlock/optionBlock"
   }
 }
