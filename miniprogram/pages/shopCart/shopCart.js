@@ -61,6 +61,10 @@ Page({
     let sum = 0;
     let item = e.detail;
     let newArr = [];
+
+    /**
+     * 寻找要删除项并计算总价
+     */
     for (let i = 0; i < this.data.shopList.length; i++) {
       const ele = this.data.shopList[i];
       if (ele._id === item._id && ele.type.name === item.type.name) {
@@ -69,11 +73,19 @@ Page({
       newArr.push(ele);
       sum += ele.type.total;
     }
+
+    //如果没有数据要展示下方导航条
+    if(newArr.length < 1){
+      wx.showTabBar({
+        animation: true,
+      })
+    }
     try {
       wx.setStorageSync('shop', JSON.stringify(newArr));
     } catch (error) {
 
     }
+    
     setTimeout(() => {
       this.setData({
         globalShow: false,

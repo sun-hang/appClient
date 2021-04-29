@@ -33,6 +33,7 @@
 
 .shopItem_content_container{
   font-size: .9rem;
+  width: 100%;
 }
 .shopItem_content_title_container{
   width: 100%;

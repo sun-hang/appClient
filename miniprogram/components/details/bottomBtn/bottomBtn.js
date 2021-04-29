@@ -1,4 +1,5 @@
 // components/details/bottomBtn/bottomBtn.js
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
@@ -18,6 +19,23 @@ Component({
    */
   data: {
 
+  },
+  lifetimes:{
+    attached(){
+      wx.getSetting({
+        withSubscriptions: true,
+        success(res){
+          // console.log(res)
+          wx.getUserInfo({
+            lang: "zh_CN",
+            withCredentials: true,
+            success(res) {
+              app.globalData.userInfo = res.userInfo;
+            }
+          })
+        }
+      })
+    }
   },
   /**
    * 组件的方法列表
@@ -40,10 +58,13 @@ Component({
       this.triggerEvent('addshop', e);
     },
     purchaseClick() {
-      
+
       wx.switchTab({
         url: '/pages/shopCart/shopCart'
       })
+    },
+    getUser(e) {
+      // console.log(e)
     }
   }
 })

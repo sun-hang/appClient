@@ -5,27 +5,23 @@ Page({
   /**
    * 页面的初始数据
    */
-  // data: {
-  //   tips: '请稍后',
-  //   show: true,
-  //   animated: true,
-  // },
   data: {
     show: false,
     productList: [],
     scrollButton: false
   },
-  // onShow() {
-  //   this.timer = setInterval(() => {
-  //     this.setData({
-  //       show: !this.data.show
-  //     })
-  //   }, 2000)
-  // },
-  // onUnload() {
-  //   clearInterval(this.timer)
-  // },
-
+  getUser(){
+    wx.getUserProfile({
+      desc: '用于完善会员资料',
+      lang:"zh_CN",
+      success(res){
+        console.log(res)
+      },
+      fail(res){
+        console.log(res)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -45,6 +41,12 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    wx.getUserInfo({
+      lang: "zh_CN",
+      success(res){
+        console.log(res)
+      }
+    })
   },
 
   /**

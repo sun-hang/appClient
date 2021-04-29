@@ -78,3 +78,8 @@
   background-color: #A1A1A1;
   color: #EFEFEF;
 }
+
+.bottomBtn_center_btn button{
+  font-size: .9rem;
+  color: #EFEFEF;
+}

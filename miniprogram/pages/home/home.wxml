@@ -1,12 +1,10 @@
 <!-- 首页 -->
 <image class="home_bg_image" lazy-load src="http://81.70.89.166:12306/api/download/1.jpg" mode="scaleToFill"></image>
-<view class="home_title">
+<view class="home_title" bindtap="getUser">
   <my-about title="小方的护肤小店"
     iconUrl="https://wx.qlogo.cn/mmhead/CttmTaYSYkRkiaRUblqky8Wib5EC3HyyOlYzr8ibtv50Dxxibiak8yw2kJg/64"></my-about>
 </view>
-<!-- <mp-loading type="circle"></mp-loading>
-<mp-loading duration="{{900}}" ext-class="demo0" type="dot-gray" show="{{show}}" animated="{{animated}}"></mp-loading>
-<mp-loading type="dot-white" ext-class="demo1"></mp-loading> -->
+
 <view class="home_link_out_container">
   <view class="home_link_container">
     <view class="home_link_title_container">
