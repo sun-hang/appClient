@@ -5,7 +5,9 @@
     "pages/menu/menu",
     "pages/shopCart/shopCart",
     "pages/details/details",
-    "pages/searchPage/searchPage"
+    "pages/searchPage/searchPage",
+    "pages/user/user",
+    "pages/order/order"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -40,6 +42,12 @@
         "text": "购物袋",
         "iconPath": "./images/shopCart-1.png",
         "selectedIconPath": "./images/shopCart.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "./images/user_1.png",
+        "selectedIconPath": "./images/user.png"
       }
     ]
   },

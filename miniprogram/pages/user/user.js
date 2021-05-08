@@ -1,47 +1,26 @@
-// miniprogram/pages/home/home.js
-const api = require('../../myUtils/api');
+// miniprogram/pages/user/user.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    show: false,
-    productList: [],
-    scrollButton: false
+
   },
-  getUser(){
-    wx.getUserProfile({
-      desc: '用于完善会员资料',
-      lang:"zh_CN",
-      success(res){
-        console.log(res)
-      },
-      fail(res){
-        console.log(res)
-      }
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      show: true
-    })
-    api.getLikeProduct((res) => {
-      this.setData({
-        productList: res.data.result,
-        show: false
-      })
-    })
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
@@ -85,24 +64,9 @@ Page({
   onShareAppMessage: function () {
 
   },
-  /**
-   * 滚动条滚动事件
-   * @param {*} e 
-   */
-  onPageScroll(e) {
-    if (e.scrollTop > 700) {
-      this.setData({
-        scrollButton: true
-      })
-    }
-    if (e.scrollTop < 200) {
-      this.setData({
-        scrollButton: false
-      })
-    }
-  },
   onTabItemTap(time){
-    console.log(time)
-    console.log('tab')
+    if(app.globalData.userInfo){
+      
+    }
   }
 })
