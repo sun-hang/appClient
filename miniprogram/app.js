@@ -1,6 +1,10 @@
 //app.js
+/**
+ * 登录
+ */
+const api = require('./myUtils/api');
 App({
-  onLaunch: function () {
+  onLaunch: async function () {
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -13,7 +17,14 @@ App({
         traceUser: true,
       })
     }
-
-    this.globalData = {}
+    const res = await wx.cloud.callFunction({
+      name: "login"
+    })
+    this.globalData = {
+      openId: res.result.openid
+    }
+    // api.getUserInfo(this.globalData.openId, (err, res) => {
+    //   console.log(err, res);
+    // })
   }
 })

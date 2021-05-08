@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "my-order-card": "../../components/user/orderCard/orderCard",
+    "my-user-card": "../../components/user/userCard/userCard"
+  }
+}
