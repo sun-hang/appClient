@@ -1,5 +1,5 @@
 <!-- 首页 -->
-<image class="home_bg_image" lazy-load src="http://81.70.89.166:12306/api/download/1.jpg" mode="scaleToFill"></image>
+<image class="home_bg_image" lazy-load src="https://81.70.89.166:612/api/download/1.jpg" mode="scaleToFill"></image>
 <view class="home_title" bindtap="getUser">
   <my-about title="小方的护肤小店"
     iconUrl="https://wx.qlogo.cn/mmhead/CttmTaYSYkRkiaRUblqky8Wib5EC3HyyOlYzr8ibtv50Dxxibiak8yw2kJg/64"></my-about>
