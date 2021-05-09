@@ -27,7 +27,7 @@ Component({
      */
     continueBtnHandle(e) {
       wx.showTabBar({
-        animation: true,
+        animation: false,
       })
       wx.switchTab({
         url: '/pages/home/home',

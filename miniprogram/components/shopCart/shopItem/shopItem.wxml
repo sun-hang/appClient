@@ -4,7 +4,7 @@
       <my-checkbox checked="{{item.type.checked}}" bind:change="boxChange"></my-checkbox>
     </view>
     <view class="shopItem_img_container">
-      <image src="{{'http://127.0.0.1:12307/' + item.imgs[0]}}"></image>
+      <image src="{{'https://fangmmmm.top:508/' + item.imgs[0]}}" lazy-load></image>
     </view>
     <view class="shopItem_content_container">
       <view class="shopItem_content_title_container">

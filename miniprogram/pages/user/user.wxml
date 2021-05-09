@@ -1,2 +1,1 @@
-<!--miniprogram/pages/user/user.wxml-->
-<text>miniprogram/pages/user/user.wxml</text>
+<view wx:if="{{pageIsShow}}">这是用户界面</view>

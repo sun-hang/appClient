@@ -1,5 +1,5 @@
 <my-empty wx:if="{{shopList.length == 0}}"></my-empty>
-<view class="shopCart_container" wx:if="{{shopList.length > 0}}">
+<view class="shopCart_container" wx:if="{{shopList.length > 0 && pageIsShow}}">
   <view class="shopCart_inner_container">
     <view class="shopCart_title_container">
       <my-checkbox checked="{{allChecked}}" text="全部" bind:change="allChange"></my-checkbox>

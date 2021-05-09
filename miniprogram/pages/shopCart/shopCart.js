@@ -2,7 +2,8 @@
 /**
  * 从缓存取数据，每个商品会加上一个type值，记录规格信息
  */
-
+const app = getApp();
+const login = require('../../myUtils/login')
 Page({
 
   /**
@@ -12,7 +13,8 @@ Page({
     shopList: [],
     globalShow: false,
     allChecked: true,
-    totalPrice: 0
+    totalPrice: 0,
+    pageIsShow: false
   },
 
   /**
@@ -75,9 +77,9 @@ Page({
     }
 
     //如果没有数据要展示下方导航条
-    if(newArr.length < 1){
+    if (newArr.length < 1) {
       wx.showTabBar({
-        animation: true,
+        animation: false,
       })
     }
     try {
@@ -85,7 +87,7 @@ Page({
     } catch (error) {
 
     }
-    
+
     setTimeout(() => {
       this.setData({
         globalShow: false,
@@ -136,7 +138,7 @@ Page({
     }
   },
 
-  confirmBtnHandle(){
+  confirmBtnHandle() {
     console.log('确认订单')
   },
   /**
@@ -217,6 +219,23 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  onTabItemTap(res) {
+    login.getUser((err, res) => {
+      if (!err) {
+        this.setData({
+          pageIsShow: true
+        })
+      } else {
+        wx.switchTab({
+          url: '/pages/home/home',
+        })
+        wx.showTabBar({
+          animation: false,
+        })
+      }
+    });
   }
 })
 

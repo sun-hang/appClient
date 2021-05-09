@@ -1,7 +1,7 @@
 const axios = require('axios').default;
 
-const url = "http://127.0.0.1:12307";
-const url = 'https://fangmmmm.top:508';
+const url = "http://127.0.0.1:529";
+// const url = 'https://fangmmmm.top:508';
 /**
  * 获取所有标签
  */
@@ -128,6 +128,22 @@ module.exports.getOrderList = (callback) => {
     },
     fail(res) {
       callback(res + "错误", null)
+    }
+  })
+}
+
+module.exports.addAdmin = (data = {}, callback) => {
+  let path = `/api/admin`
+  wx.request({
+    url: url + path,
+    method: "POST",
+    dataType: "json",
+    data: JSON.stringify(data),
+    success(res) {
+      callback(null, res)
+    },
+    fail(err) {
+      callback(err, null)
     }
   })
 }

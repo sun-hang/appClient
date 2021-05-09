@@ -1,12 +1,14 @@
 // miniprogram/pages/user/user.js
 const app = getApp();
+const api = require('../../myUtils/api');
+const login = require('../../myUtils/login')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    pageIsShow: false
   },
 
   /**
@@ -64,9 +66,22 @@ Page({
   onShareAppMessage: function () {
 
   },
-  onTabItemTap(time){
-    if(app.globalData.userInfo){
-      
-    }
+  /**
+   * taber点击事件
+   * @param {*} time 
+   */
+  onTabItemTap(time) {
+
+    login.getUser((err, res) => {
+      if (!err) {
+        this.setData({
+          pageIsShow: true
+        })
+      } else {
+        wx.switchTab({
+          url: '/pages/home/home',
+        })
+      }
+    });
   }
 })
