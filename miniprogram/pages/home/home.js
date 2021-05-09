@@ -100,9 +100,9 @@ Page({
         scrollButton: false
       })
     }
-  },
-  onTabItemTap(time){
-    console.log(time)
-    console.log('tab')
   }
+  // onTabItemTap(time){
+  //   console.log(time)
+  //   console.log('tab')
+  // }
 })

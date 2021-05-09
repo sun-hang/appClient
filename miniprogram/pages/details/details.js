@@ -1,4 +1,5 @@
 const api = require('../../myUtils/api');
+
 Page({
 
   /**
@@ -16,6 +17,13 @@ Page({
    * @param {*} e 
    */
   addshop(e) {
+    if (this.data.productCount < 1) {
+      wx.showToast({
+        title: '商品已售完,无法加入购物车',
+        icon: "none"
+      })
+      return;
+    }
     this.setData({
       show: true
     })
@@ -70,15 +78,18 @@ Page({
   optionChange(e) {
     let arr = this.data.item.optionsDetail;
     let value = this.data.item.currentPric;
+    let count = 0;
     for (let i = 0; i < arr.length; i++) {
       const element = arr[i];
       if (element.type === e.detail) {
-        value = element.price
+        value = element.price;
+        count = element.total;
       }
     }
     this.setData({
       optionKey: e.detail,
-      optionVal: value
+      optionVal: value,
+      productCount: count
     })
   },
   /**

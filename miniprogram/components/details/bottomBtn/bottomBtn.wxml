@@ -15,7 +15,7 @@
           <view>购物袋</view>
         </view>
       </view>
-      <view class="bottomBtn_center_btn" bindtap="currentShopClick"><button open-type="getUserInfo" bindgetuserinfo="getUser">加入购物袋</button></view>
+      <view class="bottomBtn_center_btn" bindtap="currentShopClick">加入购物袋</view>
       <view class="bottomBtn_right_btn" bindtap="purchaseClick">立即购买</view>
     </view>
   </view>

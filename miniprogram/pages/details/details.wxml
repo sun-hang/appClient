@@ -15,7 +15,8 @@
     <my-describe detail="{{item.detail}}"></my-describe>
   </view>
   <view class="details_bottomBtn_container">
-    <my-bottom-btn bind:addshop="addshop" key="{{optionKey}}" value="{{optionVal}}"></my-bottom-btn>
+    <my-bottom-btn bind:addshop="addshop" key="{{productCount > 0 ? optionKey:'已售完'}}"
+      value="{{productCount > 0 ? optionVal:0}}"></my-bottom-btn>
   </view>
 </view>
 <my-global-loading show="{{show}}"></my-global-loading>

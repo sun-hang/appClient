@@ -145,6 +145,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    /**
+        * 判断是否有用户
+        */
+    if (app.globalData.user) {
+      return
+    }
+    login.getUser((err, res) => {
+      if (!err) {
+        this.setData({
+          pageIsShow: true
+        })
+      } else {
+        wx.switchTab({
+          url: '/pages/home/home',
+        })
+        wx.showTabBar({
+          animation: false,
+        })
+      }
+    });
 
   },
 
@@ -184,6 +204,8 @@ Page({
     } catch (error) {
 
     }
+
+
   },
 
   /**
@@ -222,6 +244,9 @@ Page({
   },
 
   onTabItemTap(res) {
+    if (app.globalData.user) {
+      return
+    }
     login.getUser((err, res) => {
       if (!err) {
         this.setData({
@@ -236,6 +261,7 @@ Page({
         })
       }
     });
+
   }
 })
 
