@@ -1,5 +1,6 @@
 // components/details/bottomBtn/bottomBtn.js
 const app = getApp();
+const login = require('../../../myUtils/login')
 Component({
   /**
    * 组件的属性列表
@@ -20,21 +21,9 @@ Component({
   data: {
 
   },
-  lifetimes:{
-    attached(){
-      wx.getSetting({
-        withSubscriptions: true,
-        success(res){
-          // console.log(res)
-          wx.getUserInfo({
-            lang: "zh_CN",
-            withCredentials: true,
-            success(res) {
-              app.globalData.userInfo = res.userInfo;
-            }
-          })
-        }
-      })
+  lifetimes: {
+    attached() {
+     
     }
   },
   /**
@@ -47,9 +36,23 @@ Component({
       })
     },
     shopClick() {
-      wx.switchTab({
-        url: '/pages/shopCart/shopCart',
-      })
+      if (!app.globalData.user) {
+        login.getUser((err, res) => {
+          if (!err) {
+            wx.switchTab({
+              url: '/pages/shopCart/shopCart',
+            })
+            return;
+          }
+          wx.showToast({
+            title: '授权失败',
+          })
+        })
+      } else {
+        wx.switchTab({
+          url: '/pages/shopCart/shopCart',
+        })
+      }
     },
     currentShopClick(e) {
       /**

@@ -10,7 +10,8 @@ Page({
     item: {},
     show: false,
     optionKey: "", //规格信息的key 例："999-大"
-    optionVal: 0
+    optionVal: 0,
+    productCount: 0
   },
   /**
    * 添加购物车
@@ -53,6 +54,7 @@ Page({
           price: this.data.optionVal,
           count: 1,
           checked: true,
+          stock: this.data.productCount
         }
         item.type.total = item.type.price * item.type.count;
         filter.push(item);
@@ -78,7 +80,8 @@ Page({
   optionChange(e) {
     let arr = this.data.item.optionsDetail;
     let value = this.data.item.currentPric;
-    let count = 0;
+    let count = 0,
+      stock = 0;
     for (let i = 0; i < arr.length; i++) {
       const element = arr[i];
       if (element.type === e.detail) {

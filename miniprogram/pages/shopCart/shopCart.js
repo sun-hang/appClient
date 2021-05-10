@@ -37,14 +37,12 @@ Page({
     try {
       wx.setStorageSync('shop', JSON.stringify(list));
     } finally {
-      setTimeout(() => {
-        this.setData({
-          globalShow: false,
-          shopList: list,
-          totalPrice: sum,
-          allChecked: value
-        })
-      }, 500)
+      this.setData({
+        globalShow: false,
+        shopList: list,
+        totalPrice: sum,
+        allChecked: value
+      })
     }
   },
 
@@ -87,17 +85,14 @@ Page({
     } catch (error) {
 
     }
-
-    setTimeout(() => {
-      this.setData({
-        globalShow: false,
-        shopList: newArr,
-        totalPrice: sum
-      })
-      wx.showToast({
-        title: '删除成功',
-      })
-    }, 500)
+    this.setData({
+      globalShow: false,
+      shopList: newArr,
+      totalPrice: sum
+    })
+    wx.showToast({
+      title: '删除成功',
+    })
   },
 
   checkboxChange(e) {
@@ -127,14 +122,12 @@ Page({
     try {
       wx.setStorageSync('shop', JSON.stringify(list))
     } finally {
-      setTimeout(() => {
-        this.setData({
-          globalShow: false,
-          totalPrice: sum,
-          shopList: list,
-          allChecked: list.every(item => item.type.checked)
-        })
-      }, 500)
+      this.setData({
+        globalShow: false,
+        totalPrice: sum,
+        shopList: list,
+        allChecked: list.every(item => item.type.checked)
+      })
     }
   },
 
@@ -146,26 +139,13 @@ Page({
    */
   onLoad: function (options) {
     /**
-        * 判断是否有用户
-        */
+     * 判断是否有用户
+     */
     if (app.globalData.user) {
-      return
+      this.setData({
+        pageIsShow: true
+      })
     }
-    login.getUser((err, res) => {
-      if (!err) {
-        this.setData({
-          pageIsShow: true
-        })
-      } else {
-        wx.switchTab({
-          url: '/pages/home/home',
-        })
-        wx.showTabBar({
-          animation: false,
-        })
-      }
-    });
-
   },
 
   /**
@@ -268,6 +248,7 @@ Page({
 function countHandel(item) {
   let list = this.data.shopList;
   let sum = 0;
+  item = setProductStock(item);
   this.setData({
     globalShow: true
   })
@@ -289,4 +270,21 @@ function countHandel(item) {
     globalShow: false,
     totalPrice: sum
   })
+}
+
+function setProductStock(item) {
+  let totalStock = 0; //总库存
+  let currentStock = item.type.stock; //当前库存
+  let optionDetail = item.optionsDetail; //规格详情
+  //进行循环
+  optionDetail.forEach(it => {
+    //修改当前详情的库存
+    if (it.type === item.type.name) {
+      it.total = currentStock;
+    }
+    //计算总库存数量
+    totalStock += it.total;
+  })
+  item.stock = totalStock;
+  return item;
 }
