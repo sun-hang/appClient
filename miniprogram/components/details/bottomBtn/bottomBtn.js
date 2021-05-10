@@ -1,5 +1,6 @@
 // components/details/bottomBtn/bottomBtn.js
 const app = getApp();
+const login = require('../../../myUtils/login')
 Component({
   /**
    * 组件的属性列表
@@ -20,11 +21,11 @@ Component({
   data: {
 
   },
-  lifetimes:{
-    attached(){
+  lifetimes: {
+    attached() {
       wx.getSetting({
         withSubscriptions: true,
-        success(res){
+        success(res) {
           // console.log(res)
           wx.getUserInfo({
             lang: "zh_CN",
@@ -47,6 +48,11 @@ Component({
       })
     },
     shopClick() {
+      if (!app.globalData.user) {
+        login.getUser((err,res) => {
+          
+        })
+      }
       wx.switchTab({
         url: '/pages/shopCart/shopCart',
       })
