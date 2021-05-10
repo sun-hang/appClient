@@ -23,6 +23,7 @@ Component({
   },
   lifetimes: {
     attached() {
+<<<<<<< HEAD
       wx.getSetting({
         withSubscriptions: true,
         success(res) {
@@ -36,6 +37,9 @@ Component({
           })
         }
       })
+=======
+     
+>>>>>>> 0827256c6f965f302d4586198b76d16981430195
     }
   },
   /**
@@ -49,6 +53,7 @@ Component({
     },
     shopClick() {
       if (!app.globalData.user) {
+<<<<<<< HEAD
         login.getUser((err,res) => {
           
         })
@@ -56,6 +61,24 @@ Component({
       wx.switchTab({
         url: '/pages/shopCart/shopCart',
       })
+=======
+        login.getUser((err, res) => {
+          if (!err) {
+            wx.switchTab({
+              url: '/pages/shopCart/shopCart',
+            })
+            return;
+          }
+          wx.showToast({
+            title: '授权失败',
+          })
+        })
+      } else {
+        wx.switchTab({
+          url: '/pages/shopCart/shopCart',
+        })
+      }
+>>>>>>> 0827256c6f965f302d4586198b76d16981430195
     },
     currentShopClick(e) {
       /**
