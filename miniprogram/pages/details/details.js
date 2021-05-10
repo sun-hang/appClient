@@ -11,7 +11,8 @@ Page({
     show: false,
     optionKey: "", //规格信息的key 例："999-大"
     optionVal: 0,
-    productCount: 0
+    productCount: 0,
+    currentIndex: 0
   },
   /**
    * 添加购物车
@@ -48,20 +49,29 @@ Page({
       if (filter.length > 0) {
         filter[0].type.count++;
         filter[0].type.total = filter[0].type.count * filter[0].type.price;
+        filter[0].type.stock--;
+        filter[0].optionsDetail[this.data.currentIndex].total--;
+        filter[0].stock--;
       } else {
         item.type = {
           name: this.data.optionKey,
           price: this.data.optionVal,
           count: 1,
           checked: true,
-          stock: this.data.productCount
+          stock: this.data.productCount - 1
         }
         item.type.total = item.type.price * item.type.count;
+        item.optionsDetail[this.data.currentIndex].total--;
+        item.stock--;
         filter.push(item);
       }
 
       value = [...new Set([...value, ...filter])]
       wx.setStorageSync('shop', JSON.stringify(value))
+      //生成订单后减少库存
+      // api.setProduct(item, (err, res) => {
+      //   console.log(err,res);
+      // })
       this.setData({
         show: false
       })
@@ -80,19 +90,21 @@ Page({
   optionChange(e) {
     let arr = this.data.item.optionsDetail;
     let value = this.data.item.currentPric;
-    let count = 0,
-      stock = 0;
+    let count = 0;
+    let index = 0;
     for (let i = 0; i < arr.length; i++) {
       const element = arr[i];
       if (element.type === e.detail) {
         value = element.price;
         count = element.total;
+        index = i;
       }
     }
     this.setData({
       optionKey: e.detail,
       optionVal: value,
-      productCount: count
+      productCount: count,
+      currentIndex: index
     })
   },
   /**

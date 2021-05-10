@@ -147,3 +147,19 @@ module.exports.addAdmin = (data = {}, callback) => {
     }
   })
 }
+
+module.exports.setProduct = (desc, callback) => {
+  let path = `/api/product/${desc._id}`;
+  wx.request({
+    url: url + path,
+    method: "PUT",
+    dataType: "json",
+    data: JSON.stringify(desc),
+    success(res) {
+      callback(null, res)
+    },
+    fail(err) {
+      callback(err, null)
+    }
+  })
+}

@@ -27,6 +27,7 @@ Component({
      */
     increaseBtnHandle(e) {
       let item = handle.call(this, e);
+      item.type.stock--;
       this.triggerEvent('increase', item)
     },
     /**
@@ -35,6 +36,9 @@ Component({
      */
     decreaseBtnHandle(e) {
       let item = handle.call(this, e);
+      if (e.detail != 1) {
+        item.type.stock++;
+      }
       this.triggerEvent("decrease", item)
     },
     /**

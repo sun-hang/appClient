@@ -21,7 +21,6 @@
       <view class="shopItem_operation_container">
         <my-counter bind:increase="increaseBtnHandle" bind:decrease="decreaseBtnHandle" count="{{item.type.count}}"
           price="{{item.type.price}}" stock="{{item.type.stock}}">
-          
         </my-counter>
       </view>
     </view>
