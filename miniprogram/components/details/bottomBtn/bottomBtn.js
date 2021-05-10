@@ -23,23 +23,7 @@ Component({
   },
   lifetimes: {
     attached() {
-<<<<<<< HEAD
-      wx.getSetting({
-        withSubscriptions: true,
-        success(res) {
-          // console.log(res)
-          wx.getUserInfo({
-            lang: "zh_CN",
-            withCredentials: true,
-            success(res) {
-              app.globalData.userInfo = res.userInfo;
-            }
-          })
-        }
-      })
-=======
      
->>>>>>> 0827256c6f965f302d4586198b76d16981430195
     }
   },
   /**
@@ -53,15 +37,6 @@ Component({
     },
     shopClick() {
       if (!app.globalData.user) {
-<<<<<<< HEAD
-        login.getUser((err,res) => {
-          
-        })
-      }
-      wx.switchTab({
-        url: '/pages/shopCart/shopCart',
-      })
-=======
         login.getUser((err, res) => {
           if (!err) {
             wx.switchTab({
@@ -78,7 +53,6 @@ Component({
           url: '/pages/shopCart/shopCart',
         })
       }
->>>>>>> 0827256c6f965f302d4586198b76d16981430195
     },
     currentShopClick(e) {
       /**
