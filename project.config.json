@@ -40,6 +40,7 @@
   "appid": "wxa8a1f070e1c71a94",
   "projectname": "appClient",
   "libVersion": "2.16.0",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {
     "search": {
       "list": []

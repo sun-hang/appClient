@@ -7,7 +7,10 @@
     "pages/details/details",
     "pages/searchPage/searchPage",
     "pages/user/user",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/addressList/addressList",
+    "pages/addressForm/addressForm",
+    "pages/orderDetail/orderDetail"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

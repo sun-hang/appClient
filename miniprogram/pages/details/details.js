@@ -11,7 +11,7 @@ Page({
     show: false,
     optionKey: "", //规格信息的key 例："999-大"
     optionVal: 0,
-    productCount: 0,
+    productCount: 0,  //当前标签规格产品数量
     currentIndex: 0
   },
   /**

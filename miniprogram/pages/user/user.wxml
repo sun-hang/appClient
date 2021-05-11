@@ -1,1 +1,8 @@
-<view wx:if="{{pageIsShow}}">这是用户界面</view>
+<view wx:if="{{pageIsShow}}" class="user_container">
+  <my-user-card></my-user-card>
+  <my-order-card></my-order-card>
+  <view class="user_address_container">地址版块</view>
+</view>
+
+<my-global-loading show="{{globalLoading}}"></my-global-loading>
+<my-local-loading show="{{localLoading}}"></my-local-loading>

@@ -5,7 +5,7 @@ const api = require('./api');
  * @param {Function} callback error   app.globalData
  */
 module.exports.getUser = (callback) => {
-  if (app.globalData.user) {
+  if (app.globalData && app.globalData.user) {
     callback(null, app.globalData);
     return;
   }

@@ -1,4 +1,5 @@
 // components/shopCart/shopItem/shopItem.js
+// let prentStock = 0;
 Component({
   /**
    * 组件的属性列表
@@ -28,6 +29,7 @@ Component({
     increaseBtnHandle(e) {
       let item = handle.call(this, e);
       item.type.stock--;
+      item.stock--;
       this.triggerEvent('increase', item)
     },
     /**
@@ -35,10 +37,12 @@ Component({
      * @param {*} e 
      */
     decreaseBtnHandle(e) {
-      let item = handle.call(this, e);
-      if (e.detail != 1) {
+      let item = this.data.item;
+      if (item.type.count !== 1) {
         item.type.stock++;
+        item.stock++;
       }
+      item = handle.call(this, e);
       this.triggerEvent("decrease", item)
     },
     /**

@@ -1,16 +1,11 @@
-// miniprogram/pages/user/user.js
-const app = getApp();
-const api = require('../../myUtils/api');
-const login = require('../../myUtils/login')
+// miniprogram/pages/addressList/addressList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    pageIsShow: false,
-    globalLoading: false,
-    localLoading: false
+
   },
 
   /**
@@ -31,11 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (app.globalData && app.globalData.user) {
-      this.setData({
-        pageIsShow: true
-      })
-    }
+
   },
 
   /**
@@ -71,23 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  /**
-   * taber点击事件
-   * @param {*} time 
-   */
-  onTabItemTap(time) {
-
-    login.getUser((err, res) => {
-      if (!err) {
-        this.setData({
-          pageIsShow: true
-        })
-      } else {
-        wx.switchTab({
-          url: '/pages/home/home',
-        })
-      }
-    });
   }
 })

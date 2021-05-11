@@ -1,1 +1,58 @@
-/* components/user/userCard/userCard.wxss */
+page{
+  background-color: #fff;
+}
+.userCard_container {
+  width: 100%;
+  
+}
+
+.userCard_inner_container {
+  width: 94%;
+  margin: 30rpx auto;
+  box-shadow: 1px 1px 5px  rgba(0, 0, 0, .2);
+  border-radius: 20rpx;
+  padding: 30rpx 0;
+}
+
+.userCard_title_container {
+  width: 100%;
+  display: flex;
+  padding: 15rpx 20rpx;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.userCard_title_img_box {
+  width: 140rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userCard_title_img_box image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.userCard_title_text_container{
+  width: calc(100% - 140rpx - 20rpx);
+  margin-left: 20rpx;
+}
+.userCard_title_text{
+  width: 100%;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.userCard_title_update{
+  font-size: .8rem;
+  margin-top: 15rpx;
+  color: #fff;
+  background-color: #F6C1BD;
+  display: inline-block;
+  padding: 2rpx 32rpx;
+  border-radius: 24rpx;
+}

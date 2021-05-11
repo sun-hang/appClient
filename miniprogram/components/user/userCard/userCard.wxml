@@ -1,2 +1,18 @@
-<!--components/user/userCard/userCard.wxml-->
-<text>components/user/userCard/userCard.wxml</text>
+<view class="userCard_container">
+  <view class="userCard_inner_container" bindtap="onClick">
+    <view class="userCard_title_container">
+      <view class="userCard_title_img_box">
+        <image src="{{user.userInfo.avatarUrl}}"></image>
+      </view>
+      <view class="userCard_title_text_container">
+        <view class="userCard_title_text">
+          {{user.userInfo.nickName}}
+        </view>
+        <view class="userCard_title_update">
+          更新资料
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<my-global-loading show="{{globalLoading}}"></my-global-loading>

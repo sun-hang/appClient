@@ -141,7 +141,7 @@ Page({
     /**
      * 判断是否有用户
      */
-    if (app.globalData.user) {
+    if (app.globalData && app.globalData.user) {
       this.setData({
         pageIsShow: true
       })
