@@ -1,2 +1,28 @@
-<!--components/user/ordreCard/orderCard.wxml-->
-<text>components/user/ordreCard/orderCard.wxml</text>
+<view class="orderCard_container">
+  <view class="orderCard_inner_container">
+    <view class="orderCard_title_container">
+      <view class="orderCard_title_left">我的订单</view>
+      <view class="orderCard_title_right">查看全部订单
+        <mp-icon icon="arrow" color="#aaa" size="{{10}}"></mp-icon>
+      </view>
+    </view>
+    <view class="orderCard_itemlist_container">
+      <view class="orderCard_list_icon">
+        <text class="iconfont icon-fukuanguanli"></text>
+        <text>未付款</text>
+      </view>
+      <view class="orderCard_list_icon">
+        <text class="iconfont icon-fahuozhong"></text>
+        <text>待发货</text>
+      </view>
+      <view class="orderCard_list_icon">
+        <text class="iconfont icon-daishouhuo"></text>
+        <text>待收货</text>
+      </view>
+      <view class="orderCard_list_icon">
+        <text class="iconfont icon-shouhuo"></text>
+        <text>已签收</text>
+      </view>
+    </view>
+  </view>
+</view>

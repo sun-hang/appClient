@@ -1,0 +1,19 @@
+<view class="contentList_container">
+  <view class="contentList_inner_container">
+    <view class="contentList_content_container">
+      <view class="contentList_item_container address">
+        <view class="contentList_item_left"></view>
+        <view class="contentList_item_right"></view>
+      </view>
+      <view class="contentList_item_container user">
+        <view class="contentList_item_left"></view>
+        <view class="contentList_item_right"></view>
+      </view>
+      <view class="contentList_item_container contact">
+        <view class="contentList_item_left"></view>
+        <view class="contentList_item_center"></view>
+        <view class="contentList_item_right"></view>
+      </view>
+    </view>
+  </view>
+</view>

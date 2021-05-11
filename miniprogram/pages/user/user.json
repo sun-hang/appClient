@@ -3,6 +3,7 @@
     "my-global-loading": "../../components/public/globalLoading/globalLoading",
     "my-local-loading": "../../components/public/localLoading/localLoading",
     "my-order-card": "../../components/user/orderCard/orderCard",
-    "my-user-card": "../../components/user/userCard/userCard"
+    "my-user-card": "../../components/user/userCard/userCard",
+    "my-content-list":"../../components/user/contentList/contentList"
   }
 }

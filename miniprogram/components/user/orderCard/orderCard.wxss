@@ -1,1 +1,78 @@
-/* components/user/ordreCard/orderCard.wxss */
+@font-face {
+  font-family: "iconfont";
+  /* Project id 2540837 */
+  src: url('//at.alicdn.com/t/font_2540837_u2wncfn26gi.woff2?t=1620716578261') format('woff2'),
+    url('//at.alicdn.com/t/font_2540837_u2wncfn26gi.woff?t=1620716578261') format('woff'),
+    url('//at.alicdn.com/t/font_2540837_u2wncfn26gi.ttf?t=1620716578261') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shouhuo:before {
+  content: "\e684";
+}
+
+.icon-fukuanguanli:before {
+  content: "\e65a";
+}
+
+.icon-daishouhuo:before {
+  content: "\e62f";
+}
+
+.icon-fahuozhong:before {
+  content: "\e717";
+}
+
+.orderCard_container {
+  width: 100%;
+}
+
+.orderCard_inner_container {
+  width: 94%;
+  margin: 15rpx auto;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+  border-radius: 20rpx;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+}
+
+.orderCard_title_container,
+.orderCard_itemlist_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 15rpx;
+}
+
+.orderCard_title_container {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20rpx;
+  margin-bottom: 15rpx;
+}
+.orderCard_title_left{
+  font-size: .95rem;
+}
+.orderCard_title_right{
+  font-size: .6rem;
+}
+.orderCard_list_icon{
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.orderCard_list_icon .iconfont{
+  font-size: 1.3rem;
+  color: #000;
+}
+.orderCard_list_icon text{
+  font-size: 22rpx;
+}
