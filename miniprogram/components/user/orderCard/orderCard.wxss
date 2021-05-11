@@ -55,6 +55,7 @@
   border-bottom: 1px solid #ddd;
   padding-bottom: 20rpx;
   margin-bottom: 15rpx;
+  cursor: pointer;
 }
 .orderCard_title_left{
   font-size: .95rem;
@@ -68,6 +69,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  cursor: pointer;
 }
 .orderCard_list_icon .iconfont{
   font-size: 1.3rem;

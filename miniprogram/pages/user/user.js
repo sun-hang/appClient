@@ -17,7 +17,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (app.globalData && app.globalData.user) {
+      this.setData({
+        pageIsShow: true
+      })
+    }
+    console.log(app.globalData)
   },
 
   /**
@@ -31,11 +36,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (app.globalData && app.globalData.user) {
-      this.setData({
-        pageIsShow: true
-      })
-    }
+
   },
 
   /**
@@ -77,7 +78,10 @@ Page({
    * @param {*} time 
    */
   onTabItemTap(time) {
-
+    console.log(time)
+    if (app.globalData.user) {
+      return
+    }
     login.getUser((err, res) => {
       if (!err) {
         this.setData({
@@ -86,6 +90,9 @@ Page({
       } else {
         wx.switchTab({
           url: '/pages/home/home',
+        })
+        wx.showTabBar({
+          animation: false,
         })
       }
     });

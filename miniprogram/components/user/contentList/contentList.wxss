@@ -1,1 +1,36 @@
-/* components/user/contentList/contentList.wxss */
+.contentList_container {
+  width: 100%;
+}
+
+.contentList_inner_container {
+  width: 94%;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+  border-radius: 20rpx;
+  padding: 10rpx 20rpx;
+  margin: 40rpx auto 30rpx;
+}
+
+.contentList_content_container {
+  width: 100%;
+}
+
+.contentList_item_container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1px solid #ddd;
+  margin: 15rpx 0;
+  padding-bottom: 15rpx;
+  cursor: pointer;
+}
+
+.contentList_item_container:last-child {
+  border: none;
+  padding-bottom: 0rpx;
+}
+.contentList_item_center{
+  font-size: .9rem;
+}

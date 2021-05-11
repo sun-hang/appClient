@@ -1,18 +1,33 @@
 <view class="contentList_container">
   <view class="contentList_inner_container">
     <view class="contentList_content_container">
-      <view class="contentList_item_container address">
-        <view class="contentList_item_left"></view>
-        <view class="contentList_item_right"></view>
+      <view class="contentList_item_container address" bindtap="addressClick">
+        <view class="contentList_item_left">
+          <mp-icon icon="location" color="black" size="{{20}}"></mp-icon>
+          <text>我的地址</text>
+        </view>
+        <view class="contentList_item_right">
+          <mp-icon icon="arrow" color="#aaa" size="{{10}}"></mp-icon>
+        </view>
       </view>
-      <view class="contentList_item_container user">
-        <view class="contentList_item_left"></view>
-        <view class="contentList_item_right"></view>
+      <view class="contentList_item_container user" bindtap="userClick">
+        <view class="contentList_item_left">
+          <mp-icon icon="me" color="black" size="{{20}}"></mp-icon>
+          <text>会员中心</text>
+        </view>
+        <view class="contentList_item_right">
+          <mp-icon icon="arrow" color="#aaa" size="{{10}}"></mp-icon>
+        </view>
       </view>
-      <view class="contentList_item_container contact">
-        <view class="contentList_item_left"></view>
-        <view class="contentList_item_center"></view>
-        <view class="contentList_item_right"></view>
+      <view class="contentList_item_container contact" bindtap="contactClick">
+        <view class="contentList_item_left">
+          <mp-icon icon="mobile-contacts" color="black" size="{{20}}"></mp-icon>
+          <text>联系我们</text>
+        </view>
+        <view class="contentList_item_center">周一至周日09:00-21:00</view>
+        <view class="contentList_item_right">
+          <mp-icon icon="arrow" color="#aaa" size="{{10}}"></mp-icon>
+        </view>
       </view>
     </view>
   </view>
