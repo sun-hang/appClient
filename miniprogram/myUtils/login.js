@@ -11,7 +11,6 @@ module.exports.getUser = (callback) => {
   }
   const openId = app.globalData.openId;
   api.getUserInfo(openId, (err, res) => {
-    console.log('111')
     /**
      * 用户不存在的话进行授权添加用户
      */

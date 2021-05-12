@@ -21,7 +21,6 @@ App({
     const res = await wx.cloud.callFunction({
       name: "login"
     })
-    console.log(res)
     const openId = res.result.openid;
     this.globalData = {
       openId

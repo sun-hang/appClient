@@ -146,6 +146,11 @@ Page({
         pageIsShow: true
       })
     }
+    if(!wx.getUserProfile){
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+    }
   },
 
   /**

@@ -30,7 +30,7 @@ Component({
     onClick() {
       let user = app.globalData.user;
       const that = this;
-      
+
 
       wx.getUserProfile({
         desc: '用于完善会员资料',
@@ -42,7 +42,8 @@ Component({
           let userInfo = res.userInfo;
           userInfo._id = user.userInfo._id;
           user.userInfo = userInfo;
-          api.setProduct(user, (err, res) => {
+          api.setAdmin(user._id, user, (err, res) => {
+            console.log(res)
             if (res.data.ok > 0) {
               that.setData({
                 globalLoading: false
