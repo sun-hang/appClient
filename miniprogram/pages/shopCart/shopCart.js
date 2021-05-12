@@ -138,19 +138,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    /**
-     * 判断是否有用户
-     */
-    if (app.globalData && app.globalData.user) {
-      this.setData({
-        pageIsShow: true
-      })
-    }
-    if(!wx.getUserProfile){
-      wx.navigateTo({
-        url: '/pages/login/login',
-      })
-    }
+
   },
 
   /**
@@ -164,6 +152,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    /**
+     * 判断是否有用户
+     */
+    if (app.globalData && app.globalData.user) {
+      this.setData({
+        pageIsShow: true
+      })
+    } else {
+      if (!wx.getUserProfile) {
+        wx.navigateTo({
+          url: '/pages/login/login',
+        })
+      }
+    }
+
+    
     try {
       this.setData({
         globalShow: true

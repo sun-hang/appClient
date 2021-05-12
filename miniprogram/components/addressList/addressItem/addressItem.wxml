@@ -1,0 +1,19 @@
+<view class="addressItem_container">
+  <view class="addressItem_inner_container">
+    <view class="addressItem_content_container">
+      <view class="addressItem_left_text">
+        <view class="name_and_phone">
+          <view class="addressItem_name">{{item.userName}}</view>
+          <view class="addressItem_phone">{{item.phone}}</view>
+        </view>
+        <view class="address">
+          {{item.province + item.city + item.county + item.detail}}
+        </view>
+      </view>
+      <view class="addressItem_right_btns">
+        <view class="addressItem_exit">修改</view>
+        <view class="addressItem_delete">删除</view>
+      </view>
+    </view>
+  </view>
+</view>

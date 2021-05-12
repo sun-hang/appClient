@@ -57,6 +57,12 @@
         {
           "name": "pages/login/login",
           "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/addressForm/addressForm",
+          "pathName": "pages/addressForm/addressForm",
           "scene": null
         }
       ]

@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "my-address-item": "../../components/addressList/addressItem/addressItem"
+  }
 }

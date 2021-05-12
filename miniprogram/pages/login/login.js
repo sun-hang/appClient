@@ -20,7 +20,7 @@ Page({
         canIUseGetUserProfile: true,
       })
     }
-    
+
   },
   getUserProfile() {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
@@ -100,7 +100,7 @@ async function login(userInfo) {
   } else {
     openId = app.globalData.openId
   }
-  app.globalData.user = userInfo;
+
   api.getUserInfo(openId, (err, res) => {
     if (!res.data) {
       api.addAdmin({
@@ -108,17 +108,20 @@ async function login(userInfo) {
         openId
       }, (err, user) => {
         if (user.data) {
+          console.log(user.data)
+          app.globalData.user = user.data
           success()
-        }else{
+        } else {
           fail();
         }
       })
     } else {
       res.data.userInfo = userInfo;
+      app.globalData.user = res.data
       api.setAdmin(res.data._id, res.data, (err, res) => {
         if (res.data.ok) {
           success()
-        }else{
+        } else {
           fail()
         }
       })

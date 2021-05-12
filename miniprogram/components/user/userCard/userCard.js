@@ -21,8 +21,17 @@ Component({
       this.setData({
         user: app.globalData.user
       })
+    },
+
+  },
+  pageLifetimes: {
+    show() {
+      this.setData({
+        user: app.globalData.user
+      })
     }
   },
+
   /**
    * 组件的方法列表
    */

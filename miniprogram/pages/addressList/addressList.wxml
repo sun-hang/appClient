@@ -1,2 +1,16 @@
-<!--miniprogram/pages/addressList/addressList.wxml-->
-<text>miniprogram/pages/addressList/addressList.wxml</text>
+<view class="addressList_container">
+  <view class="addressList_inner_container">
+    <view class="addressList_list_container">
+      <block wx:if="{{addressList.length > 0}}">
+        <my-address-item wx:for="{{addressList}}" item="{{item}}" wx:key="{{item._id}}" index="{{index}}">
+        </my-address-item>
+      </block>
+      <view class="addressList_empty" wx:else>
+        您的地址簿里还没有地址记录，来添加一条吧
+      </view>
+    </view>
+    <view class="addressList_add_container">
+      <button bindtap="addClick">添加新地址</button>
+    </view>
+  </view>
+</view>
