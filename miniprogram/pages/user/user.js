@@ -21,8 +21,7 @@ Page({
       this.setData({
         pageIsShow: true
       })
-    }
-    console.log(app.globalData)
+    } 
   },
 
   /**
@@ -78,7 +77,6 @@ Page({
    * @param {*} time 
    */
   onTabItemTap(time) {
-    console.log(time)
     if (app.globalData.user) {
       return
     }

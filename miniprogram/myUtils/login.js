@@ -11,12 +11,21 @@ module.exports.getUser = (callback) => {
   }
   const openId = app.globalData.openId;
   api.getUserInfo(openId, (err, res) => {
-
+    console.log('111')
     /**
      * 用户不存在的话进行授权添加用户
      */
     if (!res.data) {
-
+      console.log(wx.getUserProfile)
+      if (!wx.getUserProfile) {
+        wx.getUserInfo({
+          lang: "zh_CN",
+          withCredentials: true,
+          success(res) {
+            console.log(res);
+          }
+        })
+      }
       wx.getUserProfile({
         desc: '用于完善会员资料',
         lang: "zh_CN",
@@ -35,6 +44,7 @@ module.exports.getUser = (callback) => {
         },
 
         fail(res) {
+          console.log(res);
           callback(true, null);
         }
 
