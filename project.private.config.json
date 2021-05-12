@@ -53,6 +53,11 @@
           "pathName": "pages/shopCart/shopCart",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "scene": null
         }
       ]
     }

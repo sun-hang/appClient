@@ -1,0 +1,23 @@
+<view class="login_container">
+  <view class="login_inner_container">
+    <view class="login_img_container">
+      <image src="https://fangmmmm.top:612/api/download/1.jpg" lazy-load=""></image>
+    </view>
+    <view class="login_name_container">
+      <text>小方的美妆精品小店</text>
+    </view>
+    <view class="login_detail_container">
+      为了提供更好的服务，店小二需要获取老板您的以下信息:
+    </view>
+    <view class="login_list_container">
+      <text class="doct"></text>
+      <text>你的公开信息（昵称、头像等）</text>
+    </view>
+    <view class="login_btn_container">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" type="primary" size="default">允许使用1</button>
+      <button wx:else open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" type="primary"
+        size="default">允许使用2</button>
+      <button>取消</button>
+    </view>
+  </view>
+</view>

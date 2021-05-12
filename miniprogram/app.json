@@ -10,7 +10,8 @@
     "pages/order/order",
     "pages/addressList/addressList",
     "pages/addressForm/addressForm",
-    "pages/orderDetail/orderDetail"
+    "pages/orderDetail/orderDetail",
+    "pages/login/login"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -55,7 +56,5 @@
     ]
   },
   "sitemapLocation": "sitemap.json",
-  "plugins": {
-    
-  }
+  "plugins": {}
 }
