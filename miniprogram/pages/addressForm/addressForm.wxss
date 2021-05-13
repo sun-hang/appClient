@@ -14,29 +14,83 @@ page {
 .addressForm_formitem {
   width: 100%;
   box-sizing: border-box;
-  padding: 10rpx 10rpx 20rpx;
+  padding: 20rpx 10rpx 30rpx;
   margin: 20rpx auto 30rpx;
   display: flex;
   justify-content: start;
   align-items: center;
   font-size: .8rem;
+  position: relative;
   border-bottom: 1px solid #ccc;
 }
 
-.addressForm_formitem .label{
+.addressForm_formitem .label {
   width: 18%;
 }
-.address_btn_container{
+
+.address_btn_container {
   border: none;
 }
 
-.address_detail_container{
+.address_detail_container {
   align-items: flex-start;
 }
 
-.addressForm_formitem input,.addressForm_formitem textarea{
+.addressForm_formitem input,
+.addressForm_formitem textarea {
   font-size: .8rem;
+  width: 64%;
 }
-.addressForm_formitem textarea{
+
+.addressForm_formitem textarea {
   height: 140rpx;
+}
+
+.address_btn_container {
+  width: 100%;
+  margin-top: 50rpx;
+}
+
+.address_btn_container button {
+  width: 95%;
+  color: #fff;
+  background-color: #000;
+  font-size: .9rem;
+  border-radius: 30rpx;
+}
+
+.addressForm_formitem .icon {
+  height: 100%;
+  display: flex;
+  width: calc(100% - 18% - 64%);
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.addressForm_formitem .icon text {
+  margin-left: 5rpx;
+  margin-top: 2rpx;
+}
+
+.addressForm_formitem picker {
+  width: 64%;
+}
+
+
+
+.address_detail_container .icon {
+  height: 140rpx;
+  align-items: center;
+}
+.address_detail_container .icon view{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.address_detail_container .label{
+  margin-top: -5rpx;
+}
+.addressForm_pcc_container{
+  align-items: flex-start;
 }

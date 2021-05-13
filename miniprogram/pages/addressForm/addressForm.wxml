@@ -2,26 +2,44 @@
   <view class="addressForm_inner_container">
     <view class="addressForm_formitem addressForm_name_container">
       <view class="label">收件人</view>
-      <input type="text" name="userName" placeholder="名字" placeholder-style="{{placeholderStyle}}" />
-      <view class="icon"></view>
+      <input type="text" name="userName" placeholder="名字" placeholder-style="{{placeholderStyle}}"
+        bindinput="onNameChange" value="{{userName}}" />
+      <view class="icon">
+        <mp-icon icon="add" color="#000" size="{{15}}"></mp-icon><text>通讯录</text>
+      </view>
     </view>
     <view class="addressForm_formitem addressForm_phone_container">
       <view class="label">手机号码</view>
-      <input type="text" name="phone" placeholder="手机号" placeholder-style="{{placeholderStyle}}" />
+      <input type="text" name="phone" placeholder="手机号" placeholder-style="{{placeholderStyle}}"
+        bindinput="onPhoneChange" value="{{phone}}" />
       <view class="icon"></view>
     </view>
     <view class="addressForm_formitem addressForm_pcc_container">
       <view class="label">选择省市</view>
-      <picker mode="region">省、市、区</picker>
-      <view class="icon"></view>
+      <picker mode="region" bindchange="onPccChange">
+
+        <view wx:if="{{pcc.length === 0}}" style="color:#aaa;">省、市、区</view>
+        <block wx:else>
+          <view wx:for="{{pcc}}">{{item}}</view>
+        </block>
+      </picker>
+      <view class="icon">
+        <mp-icon icon="arrow" color="#aaa" size="{{15}}"></mp-icon>
+      </view>
     </view>
     <view class="addressForm_formitem address_detail_container">
       <view class="label">详细地址</view>
-      <textarea type="text" placeholder-style="{{placeholderStyle}}" placeholder="小区楼栋/乡村名称" selection-start="{{2}}"></textarea>
-      <view class="icon"></view>
+      <textarea type="text" placeholder-style="{{placeholderStyle}}" placeholder="小区楼栋/乡村名称" selection-start="{{2}}"
+        bindinput="onDetailChange" bindconfirm="onDetailChange" value="{{detail}}"></textarea>
+      <view class="icon">
+        <view>
+          <mp-icon icon="location" type="field" color="#f40" size="{{18}}"></mp-icon>
+          <text>定位</text>
+        </view>
+      </view>
     </view>
     <view class="addressForm_formitem address_btn_container">
-      <button>添加</button>
+      <button>保存</button>
     </view>
   </view>
 </view>
