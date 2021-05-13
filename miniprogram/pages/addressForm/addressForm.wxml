@@ -2,22 +2,22 @@
   <view class="addressForm_inner_container">
     <view class="addressForm_formitem addressForm_name_container">
       <view class="label">收件人</view>
-      <input type="text" name="userName" />
+      <input type="text" name="userName" placeholder="名字" placeholder-style="{{placeholderStyle}}" />
       <view class="icon"></view>
     </view>
     <view class="addressForm_formitem addressForm_phone_container">
       <view class="label">手机号码</view>
-      <input type="text" name="userName" />
+      <input type="text" name="phone" placeholder="手机号" placeholder-style="{{placeholderStyle}}" />
       <view class="icon"></view>
     </view>
     <view class="addressForm_formitem addressForm_pcc_container">
       <view class="label">选择省市</view>
-      <picker mode="region">1</picker>
+      <picker mode="region">省、市、区</picker>
       <view class="icon"></view>
     </view>
     <view class="addressForm_formitem address_detail_container">
       <view class="label">详细地址</view>
-      <textarea type="text"></textarea>
+      <textarea type="text" placeholder-style="{{placeholderStyle}}" placeholder="小区楼栋/乡村名称" selection-start="{{2}}"></textarea>
       <view class="icon"></view>
     </view>
     <view class="addressForm_formitem address_btn_container">

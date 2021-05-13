@@ -1,1 +1,42 @@
-/* miniprogram/pages/addressForm/addressForm.wxss */
+page {
+  background-color: #fff;
+}
+
+.addressForm_container {
+  width: 100%;
+}
+
+.addressForm_inner_container {
+  width: 94%;
+  margin: 15rpx auto;
+}
+
+.addressForm_formitem {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10rpx 10rpx 20rpx;
+  margin: 20rpx auto 30rpx;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: .8rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.addressForm_formitem .label{
+  width: 18%;
+}
+.address_btn_container{
+  border: none;
+}
+
+.address_detail_container{
+  align-items: flex-start;
+}
+
+.addressForm_formitem input,.addressForm_formitem textarea{
+  font-size: .8rem;
+}
+.addressForm_formitem textarea{
+  height: 140rpx;
+}
