@@ -38,7 +38,7 @@ page {
 
 .addressForm_formitem input,
 .addressForm_formitem textarea {
-  font-size: .8rem;
+  font-size: .9rem;
   width: 64%;
 }
 
@@ -88,9 +88,9 @@ page {
   flex-direction: column;
   align-items: center;
 }
-.address_detail_container .label{
-  margin-top: -5rpx;
-}
+/* .address_detail_container .label{
+  /* margin-top: 5rpx; 
+} */
 .addressForm_pcc_container{
   align-items: flex-start;
 }

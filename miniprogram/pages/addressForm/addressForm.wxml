@@ -4,7 +4,7 @@
       <view class="label">收件人</view>
       <input type="text" name="userName" placeholder="名字" placeholder-style="{{placeholderStyle}}"
         bindinput="onNameChange" value="{{userName}}" />
-      <view class="icon">
+      <view class="icon" bindtap="onMailClick">
         <mp-icon icon="add" color="#000" size="{{15}}"></mp-icon><text>通讯录</text>
       </view>
     </view>
@@ -31,7 +31,7 @@
       <view class="label">详细地址</view>
       <textarea type="text" placeholder-style="{{placeholderStyle}}" placeholder="小区楼栋/乡村名称" selection-start="{{2}}"
         bindinput="onDetailChange" bindconfirm="onDetailChange" value="{{detail}}"></textarea>
-      <view class="icon">
+      <view class="icon" bindtap="getLocation">
         <view>
           <mp-icon icon="location" type="field" color="#f40" size="{{18}}"></mp-icon>
           <text>定位</text>
@@ -39,7 +39,8 @@
       </view>
     </view>
     <view class="addressForm_formitem address_btn_container">
-      <button>保存</button>
+      <button bindtap="onSave">保存</button>
     </view>
   </view>
 </view>
+<mp-toptips bind:hide="bindhide" msg="{{error}}" type="error" show="{{error}}"></mp-toptips>

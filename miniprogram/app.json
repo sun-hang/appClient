@@ -55,6 +55,11 @@
       }
     ]
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序添加收货地址信息"
+    }
+  },
   "sitemapLocation": "sitemap.json",
   "plugins": {}
 }
