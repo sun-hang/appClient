@@ -13,7 +13,11 @@ Component({
   data: {
 
   },
-
+  lifetimes: {
+    attached() {
+      
+    }
+  },
   /**
    * 组件的方法列表
    */

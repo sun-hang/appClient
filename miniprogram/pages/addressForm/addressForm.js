@@ -60,6 +60,7 @@ Page({
    * @param {BaseEvent} e 
    */
   onSave(e) {
+    let that = this;
     let result = verification.call(this);
     let title = '添加成功！'
     if (!result) {
@@ -76,12 +77,12 @@ Page({
     }
     let user = app.globalData.user;
     let address = user.address;
-    if (this.data.index === -1) {
+    if (this.data.index < 0) {
       user.address.push(result) //同步本地存储
     } else {
       result.isDefault = user.address[this.data.index].default;
       user.address[this.data.index] = result;
-      title="修改成功！"
+      title = "修改成功！"
     }
     address = user.address; //重新设置数据
     api.setAdmin(user._id, { address }, (err, res) => {
@@ -92,10 +93,16 @@ Page({
           duration: 2000,
           success() {
             setTimeout(() => {
-              wx.navigateBack({
-                delta: 1,
-              })
-            },2000)
+              if (that.data.index === -2) {
+                wx.redirectTo({
+                  url: `/pages/addOrder/addOrder?index=${(address.length - 1)}` ,
+                })
+              } else {
+                wx.navigateBack({
+                  delta: 1,
+                })
+              }
+            }, 2000)
           }
         })
       }
@@ -150,7 +157,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (options.index) {
+    if (options.index == 0 || options.index > 0) {
       let result = app.globalData.user.address[options.index];
       this.setData({
         index: +options.index,
@@ -158,6 +165,10 @@ Page({
         phone: result.phone,
         pcc: [result.province, result.city, result.county],
         detail: result.detail
+      })
+    } else if (options.index == -2) {
+      this.setData({
+        index: +options.index
       })
     }
   },

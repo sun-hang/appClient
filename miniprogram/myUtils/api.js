@@ -184,3 +184,19 @@ module.exports.setAdmin = (_id, desc = {}, callback) => {
     }
   })
 }
+
+module.exports.addOrder = (desc = {}, callback) => {
+  let path = '/api/order';
+  wx.request({
+    url: url + path,
+    method: "POST",
+    data: desc,
+    dataType: "json",
+    success(res) {
+      callback(null, res)
+    },
+    fail(err) {
+      callback(err, null)
+    }
+  })
+}

@@ -1,5 +1,16 @@
 <view class="order_container">
   <view class="order_inner_container">
-    <my-order-title></my-order-title>
+    <my-order-title i="{{index}}" bind:click="titleChange"></my-order-title>
+
+    <!--全部订单-->
+    <my-all-order wx:if="{{index === 0}}"></my-all-order>
+    <!-- 已签收 -->
+    <my-signed-in wx:if="{{index === 4}}"></my-signed-in>
+    <!-- 待发货 -->
+    <my-to-be-delivered wx:if="{{index === 2}}"></my-to-be-delivered>
+    <!-- 待收货 -->
+    <my-to-be-received wx:if="{{index === 3}}"></my-to-be-received>
+    <!-- 未付款 -->
+    <my-unpaid wx:if="{{index === 1}}"></my-unpaid>
   </view>
 </view>

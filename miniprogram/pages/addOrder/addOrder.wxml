@@ -1,0 +1,75 @@
+<view class="addOrder_container">
+  <view class="addOrder_inner_container">
+    <!-- 选择地址 -->
+    <view class="addOrder_address_container">
+      <view class="addOrder_title_container">
+        <view class="title">
+          收件人信息
+        </view>
+        <view class="icon" bindtap="add_address">
+          +新地址
+        </view>
+      </view>
+      <view class="addOrder_address_content">
+        <view class="select_top" bindtap="addressSelectTopClick">
+          <view wx:if="{{currentAddressItem}}">
+            {{currentAddressItem.userName + "  " + currentAddressItem.phone + " " + currentAddressItem.province + currentAddressItem.city + currentAddressItem.county + currentAddressItem.detail}}
+          </view>
+          <mp-icon icon="arrow" type="field" color="black" size="{{10}}"></mp-icon>
+        </view>
+        <view class="select_bottom" wx:if="{{addressListShow}}">
+          <view class="select_bottom_item" bindtap="addressSelectItemClick" wx:for="{{addressList}}"
+            data-item="{{index}}" wx:key="{{item._id}}">
+            {{item.userName + "  " + item.phone + " " + item.province + item.city + item.county + item.detail}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 购买的商品列表 -->
+    <view class="addOrder_product_container">
+      <view class="addOrder_title_container">
+        <view class="title">
+          产品信息
+        </view>
+      </view>
+      <view class="addOrder_list_container">
+        <view class="addOrder_item" wx:for="{{shopList}}" wx:key="{{item._id}}">
+          <view class="item_top">
+            <view class="img_box">
+              <image src="{{'https://fangmmmm.top:508/' + item.imgs[0]}}"></image>
+            </view>
+            <view class="content_box">
+              <view class="title">{{item.productName}}</view>
+              <view class="detail_box">
+                {{item.type.name}}
+              </view>
+            </view>
+          </view>
+          <view class="item_bottom">
+            <view class="count_box">
+              {{item.type.count}}
+            </view>
+            <view class="price_box">
+              ￥{{item.type.total}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 总价和确认按钮 -->
+    <view class="addOrder_total_container">
+      <view class="addOrder_total_price_container">
+        <view class="subtotal_box">
+          <text>小计</text>
+          <text>￥{{total}}</text>
+        </view>
+        <view class="total_box">
+          <text>总计</text>
+          <text>￥{{total}}</text>
+        </view>
+      </view>
+      <view class="addOrder_total_btn">
+        <button bindtap="addOrder">确认提交</button>
+      </view>
+    </view>
+  </view>
+</view>

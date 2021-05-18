@@ -132,7 +132,17 @@ Page({
   },
 
   confirmBtnHandle() {
-    console.log('确认订单')
+    let result = this.data.shopList.filter(item => item.type.checked);
+    if (result.length === 0) {
+      wx.showToast({
+        title: '您没有选中商品',
+        icon: "none"
+      })
+      return
+    }
+    wx.navigateTo({
+      url: '/pages/addOrder/addOrder',
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -167,7 +177,7 @@ Page({
       }
     }
 
-    
+
     try {
       this.setData({
         globalShow: true

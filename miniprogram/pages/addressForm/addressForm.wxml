@@ -39,7 +39,8 @@
       </view>
     </view>
     <view class="addressForm_formitem address_btn_container">
-      <button bindtap="onSave">保存</button>
+      <button bindtap="onSave" wx:if="{{index === -2}}">保存并使用</button>
+      <button bindtap="onSave" wx:else>保存</button>
     </view>
   </view>
 </view>
