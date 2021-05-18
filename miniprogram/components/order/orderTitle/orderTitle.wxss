@@ -1,1 +1,25 @@
-/* components/order/orderTitle/orderTitle.wxss */
+.orderTitle_container{
+  width: 100%;
+}
+.orderTitle_inner_container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(224, 224, 224);
+  padding-bottom: 2rpx;
+}
+
+.orderTitle_item{
+  /* width: 20%; */
+  text-align: center;
+  font-size: .9rem;
+  color: rgb(107, 107, 107);
+  line-height: 2.3rem;
+}
+
+
+.orderTitle_item.active{
+  color: #000;
+  border-bottom: 2px solid #000;
+}

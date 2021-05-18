@@ -1,5 +1,5 @@
 <view class="order_container">
   <view class="order_inner_container">
-    
+    <my-order-title></my-order-title>
   </view>
 </view>

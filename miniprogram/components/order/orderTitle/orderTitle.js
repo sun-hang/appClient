@@ -4,7 +4,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    index: {
+    i: {
       type: Number
     }
   },
@@ -20,6 +20,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onclcik(e) {
+      this.triggerEvent('click',e.currentTarget.dataset.item)
+    }
   }
 })

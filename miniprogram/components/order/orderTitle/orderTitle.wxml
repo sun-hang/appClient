@@ -1,2 +1,5 @@
-<!--components/order/orderTitle/orderTitle.wxml-->
-<text>components/order/orderTitle/orderTitle.wxml</text>
+<view class="orderTitle_container">
+  <view class="orderTitle_inner_container">
+    <view bindtap="onclcik" class="orderTitle_item {{i === index ? 'active':''}}" data-item="{{index}}" wx:for="{{list}}">{{item}}</view>
+  </view>
+</view>

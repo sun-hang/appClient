@@ -69,6 +69,13 @@
         {
           "name": "pages/addressList/addressList",
           "pathName": "pages/addressList/addressList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/order/order",
+          "pathName": "pages/order/order",
+          "query": "id=6087e3f7391d1359ac4715c2",
           "scene": null
         }
       ]
