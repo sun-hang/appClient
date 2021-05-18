@@ -63,6 +63,12 @@
         {
           "name": "pages/addressForm/addressForm",
           "pathName": "pages/addressForm/addressForm",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/addressList/addressList",
+          "pathName": "pages/addressList/addressList",
           "scene": null
         }
       ]

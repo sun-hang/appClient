@@ -1,1 +1,43 @@
-/* components/addressList/addressItem/addressItem.wxss */
+.addressItem_container {
+  width: 100%;
+}
+
+.addressItem_inner_container {
+  width: 100%;
+}
+
+.addressItem_content_container {
+  width: 100%;
+  font-size: .9rem;
+  display: flex;
+  margin: 20rpx auto;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 30rpx;
+  justify-content: space-between;
+}
+
+.addressItem_left_text {
+  width: 86%;
+}
+
+.addressItem_right_btns {
+  width: 10%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.addressItem_exit,
+.addressItem_delete,.addressItem_default {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.addressItem_exit,.addressItem_default {
+  color: rgb(36, 166, 241);
+}
+
+.addressItem_delete {
+  color: rgb(102, 101, 100);
+}

@@ -1,12 +1,14 @@
 // miniprogram/pages/addressList/addressList.js
 const app = getApp();
+const api = require('../../myUtils/api');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    addressList: []
+    addressList: [],
+    defaultItem: null
   },
   addClick() {
     wx.navigateTo({
@@ -17,8 +19,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let addressList = app.globalData.user.address;
+    let defaultItem = null, index;
+    for (let i = 0; i < addressList.length; i++) {
+      const element = addressList[i];
+      if (element.isDefault) {
+        defaultItem = element;
+        index = i;
+      }
+    }
+    if (defaultItem && index != 0) {
+      let temp = addressList[0];
+      addressList[0] = defaultItem;
+      addressList[index] = temp;
+      app.globalData.user.address = addressList;
+      api.setAdmin(app.globalData.user._id, { address: addressList });
+    }
     this.setData({
-      addressList: app.globalData.user.address
+      addressList,
+      defaultItem
     })
   },
 

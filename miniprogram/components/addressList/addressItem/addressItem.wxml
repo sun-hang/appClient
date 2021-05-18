@@ -4,15 +4,16 @@
       <view class="addressItem_left_text">
         <view class="name_and_phone">
           <view class="addressItem_name">{{item.userName}}</view>
-          <view class="addressItem_phone">{{item.phone}}</view>
+          <view class="addressItem_phone">电话：{{item.phone}}</view>
         </view>
         <view class="address">
-          {{item.province + item.city + item.county + item.detail}}
+          地址：{{item.province + ' ' + item.city + ' ' + item.county + ' ' + item.detail}}
         </view>
+        <view class="addressItem_default" wx:if="{{!item.isDefault}}" bindtap="setDefault">设置为默认地址</view>
       </view>
       <view class="addressItem_right_btns">
-        <view class="addressItem_exit">修改</view>
-        <view class="addressItem_delete">删除</view>
+        <view class="addressItem_exit" bindtap="exitClick">修改</view>
+        <view class="addressItem_delete" wx:if="{{!item.isDefault}}" bindtap="deteleClick">删除</view>
       </view>
     </view>
   </view>

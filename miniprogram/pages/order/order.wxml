@@ -1,2 +1,5 @@
-<!--miniprogram/pages/order/order.wxml-->
-<text>miniprogram/pages/order/order.wxml</text>
+<view class="order_container">
+  <view class="order_inner_container">
+    
+  </view>
+</view>

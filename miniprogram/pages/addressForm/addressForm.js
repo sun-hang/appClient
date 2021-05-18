@@ -1,5 +1,6 @@
 // miniprogram/pages/addressForm/addressForm.js
 const app = getApp();
+const api = require('../../myUtils/api');
 Page({
 
   /**
@@ -60,6 +61,45 @@ Page({
    */
   onSave(e) {
     let result = verification.call(this);
+    let title = '添加成功！'
+    if (!result) {
+      return
+    }
+    //组合地址对象
+    result = {
+      userName: this.data.userName,
+      province: this.data.pcc[0],
+      city: this.data.pcc[1],
+      county: this.data.pcc[2],
+      detail: this.data.detail,
+      phone: this.data.phone
+    }
+    let user = app.globalData.user;
+    let address = user.address;
+    if (this.data.index === -1) {
+      user.address.push(result) //同步本地存储
+    } else {
+      result.isDefault = user.address[this.data.index].default;
+      user.address[this.data.index] = result;
+      title="修改成功！"
+    }
+    address = user.address; //重新设置数据
+    api.setAdmin(user._id, { address }, (err, res) => {
+      if (res && res.data.ok && res.data.n) {
+        wx.showToast({
+          title,
+          icon: 'none',
+          duration: 2000,
+          success() {
+            setTimeout(() => {
+              wx.navigateBack({
+                delta: 1,
+              })
+            },2000)
+          }
+        })
+      }
+    })
   },
 
   /**
@@ -76,6 +116,10 @@ Page({
       }
     })
   },
+
+  /**
+   * 定位按钮点击事件，用于获取当前地址信息
+   */
   getLocation() {
     const that = this;
     wx.choosePoi({
@@ -92,6 +136,11 @@ Page({
       }
     })
   },
+
+  /**
+   * 错误提示信息隐藏触发事件
+   * @param {*} e 
+   */
   bindhide(e) {
     this.setData({
       error: ""
@@ -104,7 +153,7 @@ Page({
     if (options.index) {
       let result = app.globalData.user.address[options.index];
       this.setData({
-        index: options.index,
+        index: +options.index,
         userName: result.userName,
         phone: result.phone,
         pcc: [result.province, result.city, result.county],

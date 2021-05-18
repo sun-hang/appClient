@@ -2,7 +2,15 @@
   <view class="addressList_inner_container">
     <view class="addressList_list_container">
       <block wx:if="{{addressList.length > 0}}">
-        <my-address-item wx:for="{{addressList}}" item="{{item}}" wx:key="{{item._id}}" index="{{index}}">
+        <view class="addressList_title">默认地址</view>
+        <my-address-item item="{{defaultItem}}" wx:key="{{defaultItem._id}}" index="{{0}}" wx:if="{{defaultItem}}">
+        </my-address-item>
+        <view class="addressList_empty" wx:else>
+          空
+        </view>
+        <view class="addressList_title">其他地址</view>
+        <my-address-item wx:for="{{addressList}}" item="{{item}}" wx:key="{{item._id}}" index="{{index}}"
+          wx:if="{{!item.isDefault}}">
         </my-address-item>
       </block>
       <view class="addressList_empty" wx:else>
