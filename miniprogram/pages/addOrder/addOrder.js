@@ -16,7 +16,8 @@ Page({
     total: 0,
     addressListShow: false,
     currentAddressItem: null,
-    currentAddressIndex: -1
+    currentAddressIndex: -1,
+    globalLoading: false
   },
   addressSelectTopClick(e) {
     this.setData({
@@ -39,7 +40,22 @@ Page({
     })
   },
   addOrder() {
+    if (!this.data.currentAddressItem) {
+      wx.showToast({
+        title: '您还未选择收货地址',
+        icon: "none"
+      })
+      return;
+    }
+    this.setData({
+      globalLoading: true
+    })
+    let desc = {
 
+    }
+    // setProducts(this.data.shopList);
+    // setShop([]);
+    // addOreder()
   },
   /**
    * 生命周期函数--监听页面加载
@@ -122,3 +138,44 @@ Page({
 
   }
 })
+
+/**
+ * 设置所有商品库存等信息
+ * @param {Array} datas 
+ */
+function setProducts(datas = []) {
+  datas.forEach(item => {
+    api.setProduct(item, (err, res) => {
+      console.log(res)
+    })
+  })
+}
+
+/**
+ * 从购物车去掉已经购买的商品
+ * @param {Array} shopList 
+ */
+function setShop(shopList = []) {
+  try {
+    shopList = JSON.parse(wx.getStorageSync('shop'));
+  } catch (error) {
+    console.log(error)
+  }
+  shopList = shopList.filter(item => !item.type.checked);
+  wx.setStorageSync('shop', shopList)
+}
+
+/**
+ * 添加一个订单   用昵称加上
+ * @param {Object} desc 
+ */
+function addOreder(desc = {}) {
+  api.addOrder(desc, (err, res) => {
+    if (res.data) {
+      wx.showToast({
+        title: '已提交订单，请尽快联系店小二付款',
+        icon: "success"
+      })
+    }
+  })
+}

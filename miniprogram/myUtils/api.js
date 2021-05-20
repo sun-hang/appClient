@@ -185,6 +185,11 @@ module.exports.setAdmin = (_id, desc = {}, callback) => {
   })
 }
 
+/**
+ * 添加一个订单
+ * @param {Object} desc 
+ * @param {Function} callback 
+ */
 module.exports.addOrder = (desc = {}, callback) => {
   let path = '/api/order';
   wx.request({

@@ -46,10 +46,18 @@ Page({
     }
   },
 
+  /**
+   * 数量加处理函数
+   * @param {*} e 
+   */
   increaseBtnHandle(e) {
     countHandel.call(this, e.detail)
   },
 
+  /**
+   * 数量减函数
+   * @param {*} e 
+   */
   decreaseBtnHandle(e) {
     countHandel.call(this, e.detail)
   },
@@ -274,7 +282,8 @@ function countHandel(item) {
   for (let i = 0; i < list.length; i++) {
     const ele = list[i];
     if (ele._id === item._id && ele.type.name === item.type.name) {
-      ele.type = item.type;
+      // ele.type = item.type;
+      list[i] = item;
     }
     sum += ele.type.total;
   }

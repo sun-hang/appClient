@@ -15,6 +15,7 @@
           <view wx:if="{{currentAddressItem}}">
             {{currentAddressItem.userName + "  " + currentAddressItem.phone + " " + currentAddressItem.province + currentAddressItem.city + currentAddressItem.county + currentAddressItem.detail}}
           </view>
+          <!-- 没有地址时的占位元素 -->
           <view wx:else style="width:90%;"></view>
           <mp-icon icon="arrow" type="field" color="black" size="{{10}}"></mp-icon>
         </view>
@@ -74,3 +75,4 @@
     </view>
   </view>
 </view>
+<my-global-loading show="{{globalLoading}}"></my-global-loading>
