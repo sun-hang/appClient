@@ -51,11 +51,20 @@ Page({
       globalLoading: true
     })
     let desc = {
-
+      products: this.data.shopList,
+      adminId: app.globalData.user._id,
+      address: this.data.currentAddressItem,
+      state: 0,
+      isDelete: false,
+      nickName: app.globalData.user.userInfo.nickName
     }
-    // setProducts(this.data.shopList);
-    // setShop([]);
-    // addOreder()
+    setProducts(this.data.shopList);
+    setShop([]);
+    addOreder(desc, (err, res) => {
+      this.setData({
+        globalLoading: false
+      })
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -82,6 +91,9 @@ Page({
     let shopList = [];
     let total = 0;
     let address = app.globalData.user.address;
+    this.setData({
+      globalLoading: true
+    })
     try {
       shopList = JSON.parse(wx.getStorageSync('shop'));
     } catch (error) {
@@ -99,7 +111,8 @@ Page({
       addressList: address,
       currentAddressIndex,
       currentAddressItem,
-      total
+      total,
+      globalLoading: false
     })
   },
 
@@ -169,12 +182,20 @@ function setShop(shopList = []) {
  * 添加一个订单   用昵称加上
  * @param {Object} desc 
  */
-function addOreder(desc = {}) {
+function addOreder(desc = {}, callback) {
   api.addOrder(desc, (err, res) => {
+    callback(err, res);
     if (res.data) {
       wx.showToast({
         title: '已提交订单，请尽快联系店小二付款',
-        icon: "success"
+        duration: 1500,
+        success() {
+          setTimeout(() => {
+            wx.navigateTo({
+              url: '/pages/order/order?index=1',
+            })
+          }, 1500)
+        }
       })
     }
   })

@@ -192,6 +192,7 @@ Page({
       })
       let value = wx.getStorageSync('shop');
       let totalPrice = 0;
+      console.log(value)
       value = value ? JSON.parse(value) : [];
       value.forEach(item => {
         totalPrice += item.type.total
@@ -209,7 +210,10 @@ Page({
         })
       }
     } catch (error) {
-
+      console.log(error)
+      this.setData({
+        globalShow: false
+      })
     }
 
 
