@@ -1,10 +1,13 @@
-// components/order/toBeReceived/toBeReceived.js
+const api = require('../../../myUtils/api');
+const app = getApp();
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-
+    index: {
+      type: Number
+    }
   },
 
   /**

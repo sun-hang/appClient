@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "my-global-loading": "../../public/globalLoading/globalLoading"
+  }
+}

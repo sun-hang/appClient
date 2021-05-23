@@ -29,16 +29,17 @@ Page({
     this.setData({
       show: true
     })
+    let item = this.data.item;
+    if (!item) {
+      return
+    }
     try {
       let value = wx.getStorageSync('shop');
-      let item = this.data.item;
-
-      if (!item) {
-        return
+      if (Array.isArray(value) && value.length == 0) {
+        value = [];
+      } else {
+        value = value ? JSON.parse(value) : [];
       }
-
-      value = value ? JSON.parse(value) : [];
-
       /**
        * 查看缓存数组是否有一样的，对比_id和规格信息：例:'999-大' === '999-小'
        */

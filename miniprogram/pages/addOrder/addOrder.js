@@ -159,7 +159,7 @@ Page({
 function setProducts(datas = []) {
   datas.forEach(item => {
     api.setProduct(item, (err, res) => {
-      console.log(res)
+      // console.log(res)
     })
   })
 }

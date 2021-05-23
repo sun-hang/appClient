@@ -1,6 +1,6 @@
-// components/order/Unpaid/Unpaid.js
 const api = require('../../../myUtils/api');
 const app = getApp();
+let currentIndex = -2;
 Component({
   /**
    * 组件的属性列表
@@ -20,12 +20,22 @@ Component({
   },
   lifetimes: {
     attached() {
+
+    }
+  },
+  observers: {
+    index(index) {
+      if (index == currentIndex) {
+        return;
+      }
+      currentIndex = index;
       this.setData({
         globalLoading: true
       })
       let id = app.globalData.user._id;
-      api.getOrderList(id, this.data.index - 1, (err, res) => {
+      api.getOrderList(id, index - 1, (err, res) => {
         let orderList = [];
+        console.log(err, res)
         if (res.data) {
           orderList = res.data;
         }

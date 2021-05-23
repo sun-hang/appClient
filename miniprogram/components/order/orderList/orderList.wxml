@@ -1,0 +1,3 @@
+<!--components/order/orderList/orderList.wxml-->
+<text></text>
+<my-global-loading show="{{globalLoading}}"></my-global-loading>

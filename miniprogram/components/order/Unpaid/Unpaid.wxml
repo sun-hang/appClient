@@ -1,2 +1,2 @@
-<!--components/order/Unpaid/Unpaid.wxml-->
 <text>未支付</text>
+<my-global-loading show="{{globalLoading}}"></my-global-loading>

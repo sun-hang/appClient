@@ -7,6 +7,7 @@
     "my-signed-in": "../../components/order/SignedIn/SignedIn",
     "my-to-be-delivered": "../../components/order/toBeDelivered/toBeDelivered",
     "my-to-be-received": "../../components/order/toBeReceived/toBeReceived",
-    "my-unpaid": "../../components/order/Unpaid/Unpaid"
+    "my-unpaid": "../../components/order/Unpaid/Unpaid",
+    "my-order-list":"../../components/order/orderList/orderList"
   }
 }

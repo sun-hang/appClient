@@ -3,14 +3,15 @@
     <my-order-title i="{{index}}" bind:click="titleChange"></my-order-title>
 
     <!--全部订单-->
-    <my-all-order wx:if="{{index === 0}}"></my-all-order>
+    <!-- <my-all-order wx:if="{{index === 0}}" index="{{index}}"></my-all-order> -->
     <!-- 已签收 -->
-    <my-signed-in wx:if="{{index === 4}}"></my-signed-in>
+    <!-- <my-signed-in wx:elif="{{index === 4}}" index="{{index}}"></my-signed-in> -->
     <!-- 待发货 -->
-    <my-to-be-delivered wx:if="{{index === 2}}"></my-to-be-delivered>
+    <!-- <my-to-be-delivered wx:elif="{{index === 2}}" index="{{index}}"></my-to-be-delivered> -->
     <!-- 待收货 -->
-    <my-to-be-received wx:if="{{index === 3}}"></my-to-be-received>
+    <!-- <my-to-be-received wx:elif="{{index === 3}}" index="{{index}}"></my-to-be-received> -->
     <!-- 未付款 -->
-    <my-unpaid wx:if="{{index === 1}}"></my-unpaid>
+    <!-- <my-unpaid wx:elif="{{index === 1}}" index="{{index}}"></my-unpaid> -->
+    <my-order-list index="{{index}}"></my-order-list>
   </view>
 </view>

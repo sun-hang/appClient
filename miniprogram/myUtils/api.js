@@ -114,11 +114,14 @@ module.exports.getUserInfo = (openId = "", callback) => {
 }
 
 /**
- * 获取所有订单信息
+ * 获取订单列表
  * @param {Function} callback 
  */
-module.exports.getOrderList = (callback) => {
-  let path = `/api/order?page=${-1}`
+module.exports.getOrderList = (id, state = -1, callback) => {
+  let path = `/api/order?page=${-1}&id=${id}`
+  if (state > -1) {
+    path += '&state=' + state;
+  }
   wx.request({
     url: url + path,
     method: "GET",
@@ -132,6 +135,11 @@ module.exports.getOrderList = (callback) => {
   })
 }
 
+/**
+ * 添加用户
+ * @param {*} data 
+ * @param {*} callback 
+ */
 module.exports.addAdmin = (data = {}, callback) => {
   let path = `/api/admin`
   wx.request({
@@ -148,6 +156,11 @@ module.exports.addAdmin = (data = {}, callback) => {
   })
 }
 
+/**
+ * 修改产品信息
+ * @param {*} desc 
+ * @param {*} callback 
+ */
 module.exports.setProduct = (desc, callback) => {
   let path = `/api/product/${desc._id}`;
   wx.request({
@@ -165,7 +178,7 @@ module.exports.setProduct = (desc, callback) => {
 }
 
 /**
- * 
+ * 修改用户信息
  * @param {string} _id 
  * @param {object} desc 
  */
