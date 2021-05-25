@@ -1,6 +1,12 @@
 {
   "component": true,
   "usingComponents": {
-    "my-global-loading": "../../public/globalLoading/globalLoading"
+    "my-global-loading": "../../public/globalLoading/globalLoading",
+    "my-signed-in": "../SignedIn/SignedIn",
+    "my-to-be-delivered": "../toBeDelivered/toBeDelivered",
+    "my-to-be-received": "../toBeReceived/toBeReceived",
+    "my-unpaid": "../Unpaid/Unpaid",
+    "my-all-order": "../allOrder/allOrder",
+    "my-empty":"../../public/empty/empty"
   }
 }

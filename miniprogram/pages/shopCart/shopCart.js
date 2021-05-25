@@ -182,17 +182,17 @@ Page({
         wx.navigateTo({
           url: '/pages/login/login',
         })
+      }else{
+        this.onTabItemTap()
       }
     }
-
-
+    console.log(app.globalData)
     try {
       this.setData({
         globalShow: true
       })
       let value = wx.getStorageSync('shop');
       let totalPrice = 0;
-      console.log(value)
       value = value ? JSON.parse(value) : [];
       value.forEach(item => {
         totalPrice += item.type.total
@@ -210,7 +210,7 @@ Page({
         })
       }
     } catch (error) {
-      console.log(error)
+      // console.log(error)
       this.setData({
         globalShow: false
       })

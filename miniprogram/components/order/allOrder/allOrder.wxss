@@ -1,1 +1,49 @@
-/* components/order/allOrder/allOrder.wxss */
+.orderAll_container{
+  width: 100%;
+  margin: 30rpx 0;
+  
+}
+.orderAll_inner_container{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 25rpx 20rpx;
+  font-size: 24rpx;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+  border-radius: 8rpx;
+}
+.orderAll_title_container,.orderAll_time_count_container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15rpx 0;
+}
+.orderAll_time_count_container{
+  margin-bottom: 30rpx;
+}
+.orderAll_img_container{
+  width: 180rpx;
+  height: 180rpx;
+  margin-bottom: 25rpx;
+}
+
+.orderAll_img_container image{
+  width: 100%;
+  height: 100%;
+}
+.orderAll_priceTotal_container,.orderAll_btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.orderAll_btns button{
+  font-size: 24rpx;
+  margin: 0 8rpx;
+}
+.orderAll_btns button.boss{
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.orderAll_btns button.delete{
+  background-color: #000;
+  color: #fff;
+}

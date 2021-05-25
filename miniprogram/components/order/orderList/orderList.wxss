@@ -1,1 +1,8 @@
-/* components/order/orderList/orderList.wxss */
+.orderList_container {
+  width: 100%;
+}
+
+.orderList_inner_container {
+  width: 94%;
+  margin: 0 auto;
+}

@@ -24,16 +24,17 @@ Component({
     }
   },
   observers: {
-    index(index) {
-      if (index == currentIndex) {
+    index(i) {
+      if (i == currentIndex) {
         return;
       }
-      currentIndex = index;
+      console.log(i);
+      currentIndex = i;
       this.setData({
         globalLoading: true
       })
       let id = app.globalData.user._id;
-      api.getOrderList(id, index - 1, (err, res) => {
+      api.getOrderList(id, i - 1, (err, res) => {
         let orderList = [];
         console.log(err, res)
         if (res.data) {

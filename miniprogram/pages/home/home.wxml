@@ -2,7 +2,7 @@
 <image class="home_bg_image" lazy-load src="https://www.fangmmmm.top:612/api/download/1.jpg" mode="scaleToFill"></image>
  <!-- <image class="home_bg_image" lazy-load src="https://81.70.89.166:612/api/download/1.jpg" mode="scaleToFill"></image> -->
 
-<view class="home_title" bindtap="getUser">
+<view class="home_title">
   <my-about title="小方的护肤小店"
     iconUrl="https://www.fangmmmm.top:612/api/download/1.jpg"></my-about>
 </view>

@@ -1,2 +1,28 @@
-<!--components/order/allOrder/allOrder.wxml-->
-<text>全部订单</text>
+<view class="orderAll_container">
+  <view class="orderAll_inner_container">
+    <view class="orderAll_title_container">
+      <view class="orderAll_orderNumber">订单编号：{{data.orderNumber}}</view>
+      <view class="orderAll_orderState" wx:if="{{data.state === 0}}">未支付</view>
+      <view class="orderAll_orderState" wx:elif="{{data.state === 1}}">待发货</view>
+      <view class="orderAll_orderState" wx:elif="{{data.state === 2}}">待收货</view>
+      <view class="orderAll_orderState" wx:elif="{{data.state === 3}}">已收货</view>
+      <view class="orderAll_orderState" wx:elif="{{data.state === 4}}">已取消</view>
+    </view>
+    <view class="orderAll_time_count_container">
+      <view class="orderAll_time">下单时间：{{year}}</view>
+      <view class="orderAll_count">商品数量：{{count}}</view>
+    </view>
+    <view class="orderAll_img_container">
+      <image src="{{'https://fangmmmm.top:508/' + data.products[0].imgs[0]}}" alt="" />
+    </view>
+    <view class="orderAll_priceTotal_container">
+      <view class="price">
+        总计：￥{{price}}
+      </view>
+      <view class="orderAll_btns" >
+        <button class="boss">联系商家</button>
+        <button class="delete" wx:if="{{data.state === 3 || data.state === 4}}">删除订单</button>
+      </view> 
+    </view>
+  </view>
+</view>

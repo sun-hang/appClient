@@ -2,12 +2,7 @@
   "usingComponents": {
     "my-order-card": "../../components/user/orderCard/orderCard",
     "my-user-card": "../../components/user/userCard/userCard",
-    "my-all-order": "../../components/order/allOrder/allOrder",
     "my-order-title": "../../components/order/orderTitle/orderTitle",
-    "my-signed-in": "../../components/order/SignedIn/SignedIn",
-    "my-to-be-delivered": "../../components/order/toBeDelivered/toBeDelivered",
-    "my-to-be-received": "../../components/order/toBeReceived/toBeReceived",
-    "my-unpaid": "../../components/order/Unpaid/Unpaid",
     "my-order-list":"../../components/order/orderList/orderList"
   }
 }

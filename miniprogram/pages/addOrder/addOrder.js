@@ -189,10 +189,11 @@ function addOreder(desc = {}, callback) {
       wx.showToast({
         title: '已提交订单，请尽快联系店小二付款',
         duration: 1500,
+        icon: 'none',
         success() {
           setTimeout(() => {
-            wx.navigateTo({
-              url: '/pages/order/order?index=1',
+            wx.switchTab({
+              url: '/pages/home/home',
             })
           }, 1500)
         }

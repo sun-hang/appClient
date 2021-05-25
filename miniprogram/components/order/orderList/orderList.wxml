@@ -1,3 +1,32 @@
-<!--components/order/orderList/orderList.wxml-->
-<text></text>
+<view class="orderList_container">
+  <view class="orderList_inner_container">
+    <block wx:if="{{index === 0}}">
+      <!--全部订单-->
+      <my-all-order wx:for="{{orderList}}" data="{{item}}" wx:key="{{item._id}}" index="{{index}}"></my-all-order>
+    </block>
+
+    <block wx:elif="{{index === 1}}">
+      <!-- 未付款 -->
+      <my-unpaid index="{{index}}" wx:for="{{orderList}}" data="{{item}}" wx:key="{{item._id}}"></my-unpaid>
+    </block>
+
+    <block wx:elif="{{index === 2}}">
+      <!-- 待发货 -->
+      <my-to-be-delivered index="{{index}}" wx:for="{{orderList}}" data="{{item}}" wx:key="{{item._id}}">
+      </my-to-be-delivered>
+    </block>
+
+    <block wx:elif="{{index === 3}}">
+      <!-- 待收货 -->
+      <my-to-be-received index="{{index}}" wx:for="{{orderList}}" data="{{item}}" wx:key="{{item._id}}">
+      </my-to-be-received>
+    </block>
+
+    <block wx:elif="{{index === 4}}">
+      <!-- 已签收 -->
+      <my-signed-in index="{{index}}" wx:for="{{orderList}}" data="{{item}}" wx:key="{{item._id}}"></my-signed-in>
+    </block>
+    <my-empty wx:if="{{orderList.length == 0}}"></my-empty>
+  </view>
+</view>
 <my-global-loading show="{{globalLoading}}"></my-global-loading>

@@ -41,6 +41,8 @@ Page({
         wx.navigateTo({
           url: '/pages/login/login',
         })
+      }else{
+        this.onTabItemTap()
       }
     }
   },

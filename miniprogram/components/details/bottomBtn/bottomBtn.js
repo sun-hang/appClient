@@ -23,7 +23,7 @@ Component({
   },
   lifetimes: {
     attached() {
-     
+
     }
   },
   /**
@@ -60,11 +60,13 @@ Component({
        */
       this.triggerEvent('addshop', e);
     },
-    purchaseClick() {
-
-      wx.switchTab({
-        url: '/pages/shopCart/shopCart'
-      })
+    purchaseClick(e) {
+      this.triggerEvent('addshop', e);
+      setTimeout(() => {
+        wx.switchTab({
+          url: '/pages/shopCart/shopCart'
+        })
+      }, 2000)
     },
     getUser(e) {
       // console.log(e)
