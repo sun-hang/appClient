@@ -1,2 +1,2 @@
 <!--miniprogram/pages/orderDetail/orderDetail.wxml-->
-<text>miniprogram/pages/orderDetail/orderDetail.wxml</text>
+<text>{{id}}</text>

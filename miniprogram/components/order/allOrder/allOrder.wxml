@@ -1,5 +1,5 @@
 <view class="orderAll_container">
-  <view class="orderAll_inner_container">
+  <view class="orderAll_inner_container" bindtap="itemClick">
     <view class="orderAll_title_container">
       <view class="orderAll_orderNumber">订单编号：{{data.orderNumber}}</view>
       <view class="orderAll_orderState" wx:if="{{data.state === 0}}">未支付</view>
@@ -20,8 +20,8 @@
         总计：￥{{price}}
       </view>
       <view class="orderAll_btns" >
-        <button class="boss">联系商家</button>
-        <button class="delete" wx:if="{{data.state === 3 || data.state === 4}}">删除订单</button>
+        <button class="boss" catchtap="contact">联系商家</button>
+        <button class="delete" catchtap="deletaOrder" wx:if="{{data.state === 3 || data.state === 4}}">删除订单</button>
       </view> 
     </view>
   </view>

@@ -218,3 +218,44 @@ module.exports.addOrder = (desc = {}, callback) => {
     }
   })
 }
+
+/**
+ * 修改一个订单
+ * @param {*} desc 
+ * @param {*} callback 
+ */
+module.exports.setOrder = (desc = {}, callback = () => { }) => {
+  let path = `/api/order/` + desc._id
+  wx.request({
+    url: url + path,
+    method: "PUT",
+    data: desc,
+    dataType: "json",
+    success(res) {
+      callback(null, res)
+    },
+    fail(err) {
+      callback(err, null)
+    }
+  })
+}
+
+/**
+ * 获取单个订单
+ * @param {*} id 
+ * @param {*} callback 
+ */
+module.exports.getOrderOne = (id = "", callback = () => { }) => {
+  let path = `/api/order/id?id=` + id;
+  wx.request({
+    url: url + path,
+    method: "GET",
+    dataType: "json",
+    success(res) {
+      callback(null, res)
+    },
+    fail(err) {
+      callback(err, null)
+    }
+  })
+}

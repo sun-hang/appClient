@@ -1,18 +1,24 @@
 // miniprogram/pages/orderDetail/orderDetail.js
+const api = require('../../myUtils/api');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    id: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      id: options.id
+    })
+    api.getOrderOne(options.id, (err, res) => {
+      console.log(err, res)
+    })
   },
 
   /**
