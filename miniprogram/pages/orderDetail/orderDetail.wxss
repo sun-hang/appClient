@@ -1,1 +1,106 @@
-/* miniprogram/pages/orderDetail/orderDetail.wxss */
+page{
+  background-color: #fff;
+}
+.orderDetail_container{
+  width: 100%;
+}
+.orderDetail_inner_container{
+  width: 94%;
+  margin: 10rpx auto;
+}
+.orderDetail_detail_container{
+  width: 100%;
+  font-size: 24rpx;
+  color: #333;
+}
+.orderDetail_title_box{
+  font-size: 30rpx;
+  color: #444;
+  font-weight: bold;
+  text-align: center;
+  padding: 30rpx 0;
+  border-bottom: 1px solid rgb(219, 219, 219);
+  margin: 20rpx 0;
+}
+.orderDetail_timeAndState_box{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+.orderDetail_orderNumber_box,.orderDetail_address_box,.orderDetail_phone_box{
+  margin: 20rpx 0;
+  width: 80%;
+}
+
+.orderDetail_products_container{
+  width: 100%;
+}
+
+.orderDetail_item_container{
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.orderDetail_item{
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 0rpx 0 30rpx;
+  margin: 35rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderDetail_item_img_box{
+  width: 180rpx;
+  height: 180rpx;
+}
+.orderDetail_item_img_box image{
+  width: 100%;
+  height: 100%;
+}
+
+.orderDetail_item_content{
+  width: calc(100% - 200rpx);
+  font-size: 26rpx;
+  color: #444;
+}
+.product_count_price{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+}
+.product_name{
+  font-weight: bold;
+}
+
+.orderDetail_btn_container{
+  display: flex;
+  justify-content: end;
+  margin: 30rpx 0;
+}
+.orderDetail_btn_container button{
+  font-size: 26rpx;
+}
+.orderDetail_btn_container .delete{
+  background-color: #000;
+  color: #fff;
+}
+.orderDetail_btn_container .boss{
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.orderDetail_total_box{
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding-bottom:30rpx ;
+}
+
+.orderDetail_total_box .orderDetail_count,.orderDetail_total_box .orderDetail_total{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #333;
+  margin: 15rpx 0;
+}

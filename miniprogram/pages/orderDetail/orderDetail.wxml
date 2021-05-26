@@ -6,7 +6,7 @@
       </view>
       <view class="orderDetail_timeAndState_box">
         <view class="time">
-          {{year}}
+          下单时间：{{year}}
         </view>
         <view class="state">
           <view class="orderAll_orderState" wx:if="{{item.state === 0}}">未支付</view>
@@ -25,7 +25,7 @@
         {{item.address.detail}}
       </view>
       <view class="orderDetail_phone_box">
-        {{item.address.phone}}
+        手机号：{{item.address.phone}}
       </view>
       <view class="orderDetail_kuaidi_box">
 
@@ -41,7 +41,7 @@
             <image lazy-load src="https://fangmmmm.top:508/{{item.imgs[0]}}"></image>
           </view>
           <view class="orderDetail_item_content">
-            <view class="product_name">{{item.productName}} {{item.type.name}}</view>
+            <view class="product_name">{{(item.productName + ' ' + item.type.name)}}</view>
             <view class="product_count_price">
               <view class="count">已下单：{{item.type.count}}</view>
               <view class="price">￥{{item.type.total}}</view>
@@ -49,10 +49,20 @@
           </view>
         </view>
       </view>
+      <view class="orderDetail_total_box">
+        <view class="orderDetail_count">
+          <view>总件数</view>
+          <view>{{count}}</view>
+        </view>
+        <view class="orderDetail_total">
+          <view>总计</view>
+          <view>￥{{total}}</view>
+        </view>
+      </view>
     </view>
     <view class="orderDetail_btn_container">
       <button class="boss" catchtap="contact">联系商家</button>
-      <button class="delete" catchtap="deletaOrder" wx:if="{{item.state === 2 || item.state === 3}}">查看物流</button>
+      <button class="see" catchtap="deletaOrder" wx:if="{{item.state === 2 || item.state === 3}}">查看物流</button>
       <button class="delete" catchtap="deletaOrder" wx:if="{{item.state === 3 || item.state === 4}}">删除订单</button>
     </view>
   </view>

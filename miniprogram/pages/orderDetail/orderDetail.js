@@ -9,7 +9,9 @@ Page({
   data: {
     id: "",
     item: {},
-    year: ""
+    year: "",
+    total: 0,
+    count: 0
   },
   ding() {
     wx.requestSubscribeMessage({
@@ -31,10 +33,20 @@ Page({
     })
     api.getOrderOne(options.id, (err, res) => {
       console.log(err, res)
-      this.setData({
-        item: res.data,
-        year: util.getYearString(res.data.orderTime)
-      })
+      if (res.data) {
+        let price = 0;
+        let count = 0;
+        res.data.products.forEach(item => {
+          count += item.type.count;
+          price += item.type.total;
+        })
+        this.setData({
+          item: res.data,
+          year: util.getYearString(res.data.orderTime),
+          total: price,
+          count
+        })
+      }
     })
   },
 
