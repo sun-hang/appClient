@@ -6,9 +6,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: ""
+    id: "",
+    item: {}
   },
-
+  ding() {
+    wx.requestSubscribeMessage({
+      tmplIds: ['RMOs1IKfEk0eLRKwqi6lb2ioobPz_aYBLd71P0ovE_A'],
+      success(res) {
+        console.log(res)
+      },
+      fail(err){
+        console.log(err)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -18,6 +29,9 @@ Page({
     })
     api.getOrderOne(options.id, (err, res) => {
       console.log(err, res)
+      this.setData({
+        item: res.data
+      })
     })
   },
 

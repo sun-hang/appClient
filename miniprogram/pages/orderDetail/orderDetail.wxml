@@ -1,2 +1,37 @@
-<!--miniprogram/pages/orderDetail/orderDetail.wxml-->
-<text>{{id}}</text>
+<view class="orderDetail_container">
+  <view class="orderDetail_inner_container">
+    <view class="orderDetail_detail_container">
+      <view class="orderDetail_title_box">
+        订单详情
+      </view>
+      <view class="orderDetail_timeAndState_box">
+
+      </view>
+      <view class="orderDetail_orderNumber_box">
+
+      </view>
+      <view class="orderDetail_address_box">
+
+      </view>
+      <view class="orderDetail_phone_box">
+
+      </view>
+      <view class="orderDetail_kuaidi_box">
+
+      </view>
+    </view>
+    <view class="orderDetail_products_container">
+      <view class="orderDetail_title_box">
+        商品详情
+      </view>
+      <view class="orderDetail_item_container">
+        <view class="orderDetail_item">
+
+        </view>
+      </view>
+    </view>
+    <view class="orderDetail_btn_container">
+
+    </view>
+  </view>
+</view>
