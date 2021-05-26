@@ -1,5 +1,6 @@
 // miniprogram/pages/orderDetail/orderDetail.js
 const api = require('../../myUtils/api');
+const util = require('../../myUtils/util')
 Page({
 
   /**
@@ -7,7 +8,8 @@ Page({
    */
   data: {
     id: "",
-    item: {}
+    item: {},
+    year: ""
   },
   ding() {
     wx.requestSubscribeMessage({
@@ -15,7 +17,7 @@ Page({
       success(res) {
         console.log(res)
       },
-      fail(err){
+      fail(err) {
         console.log(err)
       }
     })
@@ -30,7 +32,8 @@ Page({
     api.getOrderOne(options.id, (err, res) => {
       console.log(err, res)
       this.setData({
-        item: res.data
+        item: res.data,
+        year: util.getYearString(res.data.orderTime)
       })
     })
   },

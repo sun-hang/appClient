@@ -13,7 +13,7 @@
       <view class="orderAll_count">商品数量：{{count}}</view>
     </view>
     <view class="orderAll_img_container">
-      <image src="{{'https://fangmmmm.top:508/' + data.products[0].imgs[0]}}" alt="" />
+      <image lazy-load src="{{'https://fangmmmm.top:508/' + data.products[0].imgs[0]}}" alt="" />
     </view>
     <view class="orderAll_priceTotal_container">
       <view class="price">

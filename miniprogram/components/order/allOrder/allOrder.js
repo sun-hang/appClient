@@ -1,5 +1,6 @@
 // components/order/allOrder/allOrder.js
-const api = require('../../../myUtils/api')
+const api = require('../../../myUtils/api');
+const util = require('../../../myUtils/util');
 Component({
   /**
    * 组件的属性列表
@@ -28,11 +29,9 @@ Component({
   },
   observers: {
     data(item) {
-      let year = '';
+      let year = util.getYearString(item.orderTime)
       let count = 0;
       let price = 0;
-      let timeObj = new Date(+item.orderTime);
-      year = `${timeObj.getFullYear()}-${(timeObj.getMonth() + 1).toString().padStart(2, '0')}-${timeObj.getDate().toString().padStart(2, '0')} ${timeObj.getHours().toString().padStart(2, '0')}:${timeObj.getMinutes().toString().padStart(2, '0')}:${timeObj.getSeconds().toString().padStart(2, '0')}`;
       item.products.forEach(item => {
         count += item.type.count;
         price += item.type.total;
