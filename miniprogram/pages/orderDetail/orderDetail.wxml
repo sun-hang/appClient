@@ -38,7 +38,7 @@
       <view class="orderDetail_item_container">
         <view class="orderDetail_item" wx:for="{{item.products}}">
           <view class="orderDetail_item_img_box">
-            <image lazy-load src="https://fangmmmm.top:508/{{item.imgs[0]}}"></image>
+            <image lazy-load src="http://kf3.xyz/{{item.imgs[0]}}"></image>
           </view>
           <view class="orderDetail_item_content">
             <view class="product_name">{{(item.productName + ' ' + item.type.name)}}</view>

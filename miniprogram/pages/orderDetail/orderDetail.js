@@ -25,6 +25,47 @@ Page({
     })
   },
   /**
+   * 联系商家点击事件
+   * @param {*} e 
+   */
+  contact(e) {
+    wx.showToast({
+      title: '暂未开启在线联系商家，请微信或电话联系商家',
+      icon: "none"
+    })
+  },
+  /**
+   * 删除订单点击事件
+   * @param {*} e 
+   */
+  deletaOrder(e) {
+    let that = this;
+    wx.showModal({
+      title: "提示",
+      confirmColor: "#999",
+      confirmText: "删除",
+      content: "您确定删除此订单吗",
+      success(res) {
+        if (res.confirm) {
+          wx.showLoading({ mask: true })
+          that.data.item.isDelete = true
+          api.setOrder(that.data.item, (err, res) => {
+            console.log(err, res)
+            wx.hideLoading({
+              success: (res) => {
+                wx.redirectTo({
+                  url: '/pages/order/order?index=' + 0,
+                })
+              },
+            })
+          })
+        } else if (res.cancel) {
+          console.log('点击了取消')
+        }
+      }
+    })
+  },
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {

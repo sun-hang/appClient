@@ -2,7 +2,7 @@
   <swiper circular="{{circular}}" duration="{{duration}}" indicator-dots="{{indicatorDots}}">
     <swiper-item wx:for="{{imgs}}" wx:key="{{index}}">
       <view class="adBlock_img_item">
-        <image src="{{'http://81.70.89.166:12307/' + item}}" lazy-load mode="aspectFit"></image>
+        <image src="{{'http://kf3.xyz/' + item}}" lazy-load mode="aspectFit"></image>
       </view>
     </swiper-item>
   </swiper>
