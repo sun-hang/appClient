@@ -25,9 +25,9 @@ Component({
   },
   observers: {
     index(i) {
-      if (this.data.globalLoading) {
-        return;
-      }
+      // if (this.data.globalLoading) {
+      //   return;
+      // }
       currentIndex = i;
       this.setData({
         globalLoading: true

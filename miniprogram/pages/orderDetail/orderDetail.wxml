@@ -62,7 +62,7 @@
     </view>
     <view class="orderDetail_btn_container">
       <button class="boss" catchtap="contact">联系商家</button>
-      <button class="see" catchtap="deletaOrder" wx:if="{{item.state === 2 || item.state === 3}}">查看物流</button>
+      <button class="see" catchtap="seeOrderExpress" wx:if="{{item.state === 2 || item.state === 3}}">查看物流</button>
       <button class="delete" catchtap="deletaOrder" wx:if="{{item.state === 3 || item.state === 4}}">删除订单</button>
     </view>
   </view>

@@ -47,3 +47,7 @@
   background-color: #000;
   color: #fff;
 }
+.orderAll_btns button.see{
+  color: rgb(70, 201, 245);
+  border: 1px solid #999;
+}

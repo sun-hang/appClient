@@ -19,10 +19,11 @@
       <view class="price">
         总计：￥{{price}}
       </view>
-      <view class="orderAll_btns" >
+      <view class="orderAll_btns">
         <button class="boss" catchtap="contact">联系商家</button>
+        <button class="see" catchtap="seeOrderExpress" wx:if="{{data.state === 2 || data.state === 3}}">查看物流</button>
         <button class="delete" catchtap="deletaOrder" wx:if="{{data.state === 3 || data.state === 4}}">删除订单</button>
-      </view> 
+      </view>
     </view>
   </view>
 </view>
