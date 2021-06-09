@@ -52,7 +52,7 @@ Page({
     })
     let desc = {
       products: this.data.shopList,
-      adminId: app.globalData.user._id,
+      adminId: app.globalData.openId,
       address: this.data.currentAddressItem,
       state: 0,
       isDelete: false,
@@ -196,7 +196,10 @@ function addOreder(desc = {}, callback) {
             wx.switchTab({
               url: '/pages/home/home',
             })
-          }, 1500)
+            wx.showTabBar({
+              animation: false,
+            })
+          }, 500)
         }
       })
     }

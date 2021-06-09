@@ -32,7 +32,7 @@ Component({
       this.setData({
         globalLoading: true
       })
-      let id = app.globalData.user._id;
+      let id = app.globalData.openId;
       api.getOrderList(id, i - 1, (err, res) => {
         let orderList = [];
         console.log(err, res)

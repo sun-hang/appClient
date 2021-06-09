@@ -1,7 +1,7 @@
 const axios = require('axios').default;
 
-// const url = "http://127.0.0.1:529";
-const url = 'https://fangmmmm.top:508';
+const url = "http://127.0.0.1:529";
+// const url = 'https://fangmmmm.top:508';
 /**
  * 获取所有标签
  */
@@ -99,6 +99,7 @@ module.exports.getProductOne = (id = '', callback) => {
  * @param {Function} callback 
  */
 module.exports.getUserInfo = (openId = "", callback) => {
+  openId = openId.trim();
   let path = `/api/admin?openId=${openId}`;
   wx.request({
     url: url + path,
@@ -118,12 +119,13 @@ module.exports.getUserInfo = (openId = "", callback) => {
  * @param {Function} callback 
  */
 module.exports.getOrderList = (id, state = -1, callback) => {
+  id = id.trim();
   let path = `/api/order?page=${-1}&id=${id}`
   if (state > -1) {
-    path += '&state=' + state;
+    path += `&state=${state}`;
   }
   wx.request({
-    url: url + path,
+    url: (url + path).trim(),
     method: "GET",
     dataType: "json",
     success(res) {
@@ -141,16 +143,19 @@ module.exports.getOrderList = (id, state = -1, callback) => {
  * @param {*} callback 
  */
 module.exports.addAdmin = (data = {}, callback) => {
+  console.log(data)
   let path = `/api/admin`
   wx.request({
-    url: url + path,
+    url: (url + path).trim(),
     method: "POST",
     dataType: "json",
     data: JSON.stringify(data),
     success(res) {
+      console.log(res)
       callback(null, res)
     },
     fail(err) {
+      console.log(err,'错误')
       callback(err, null)
     }
   })
@@ -164,7 +169,7 @@ module.exports.addAdmin = (data = {}, callback) => {
 module.exports.setProduct = (desc, callback) => {
   let path = `/api/product/${desc._id}`;
   wx.request({
-    url: url + path,
+    url: (url + path).trim(),
     method: "PUT",
     dataType: "json",
     data: JSON.stringify(desc),
@@ -183,9 +188,10 @@ module.exports.setProduct = (desc, callback) => {
  * @param {object} desc 
  */
 module.exports.setAdmin = (_id, desc = {}, callback) => {
+  _id = _id.trim()
   let path = `/api/admin/${_id}`
   wx.request({
-    url: url + path,
+    url: (url + path).trim(),
     method: 'PUT',
     dataType: "json",
     data: JSON.stringify(desc),
@@ -206,7 +212,7 @@ module.exports.setAdmin = (_id, desc = {}, callback) => {
 module.exports.addOrder = (desc = {}, callback) => {
   let path = '/api/order';
   wx.request({
-    url: url + path,
+    url: (url + path).trim(),
     method: "POST",
     data: desc,
     dataType: "json",
@@ -225,9 +231,9 @@ module.exports.addOrder = (desc = {}, callback) => {
  * @param {*} callback 
  */
 module.exports.setOrder = (desc = {}, callback = () => { }) => {
-  let path = `/api/order/` + desc._id
+  let path = `/api/order/${desc._id}`;
   wx.request({
-    url: url + path,
+    url: (url + path).trim(),
     method: "PUT",
     data: desc,
     dataType: "json",
@@ -248,7 +254,7 @@ module.exports.setOrder = (desc = {}, callback = () => { }) => {
 module.exports.getOrderOne = (id = "", callback = () => { }) => {
   let path = `/api/order/id?id=` + id;
   wx.request({
-    url: url + path,
+    url: (url + path).trim(),
     method: "GET",
     dataType: "json",
     success(res) {
