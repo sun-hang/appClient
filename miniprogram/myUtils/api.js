@@ -1,7 +1,7 @@
 const axios = require('axios').default;
 
-const url = "http://127.0.0.1:529";
-// const url = 'https://fangmmmm.top:508';
+// const url = "http://127.0.0.1:529";
+const url = 'https://fangmmmm.top:508';
 /**
  * 获取所有标签
  */
