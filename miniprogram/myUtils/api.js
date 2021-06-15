@@ -120,7 +120,7 @@ module.exports.getUserInfo = (openId = "", callback) => {
  */
 module.exports.getOrderList = (id, state = -1, callback) => {
   id = id.trim();
-  let path = `/api/order?page=${-1}&id=${id}`
+  let path = `/api/order?page=${-1}&id=${id}&isdelete=1`
   if (state > -1) {
     path += `&state=${state}`;
   }

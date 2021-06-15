@@ -55,7 +55,7 @@ Page({
       adminId: app.globalData.openId,
       address: this.data.currentAddressItem,
       state: 0,
-      isDelete: false,
+      isDelete: 1,
       nickName: app.globalData.user.userInfo.nickName
     }
     setProducts(this.data.shopList);
