@@ -29,7 +29,12 @@ Component({
         str.push(item.tag);
         return item
       })
-      this.triggerEvent('change',str.join('-'))
+      if(str.length < 2){
+        this.triggerEvent('change',str[0])
+      }else{
+        this.triggerEvent('change',str.join('-'))
+      }
+      
       this.setData({
         newOptions: newArr
       })
@@ -51,8 +56,12 @@ Component({
       this.setData({
         newOptions: arr
       })
-      arr = this.data.newOptions.map(item => item.tag).join('-');
-      this.triggerEvent('change', arr);
+      arr = this.data.newOptions.map(item => item.tag);
+      if(arr.length < 2){
+        this.triggerEvent('change',arr[0])
+      }else{
+        this.triggerEvent('change',arr.join('-'))
+      }
     }
   }
 })
